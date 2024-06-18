@@ -3,6 +3,8 @@ package com.proyecto_daw2.cinemoon.Controller;
 
 
 import lombok.AllArgsConstructor;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,30 +14,39 @@ import com.proyecto_daw2.cinemoon.Service.IPeliculaService;
 import java.util.List;
 
 @AllArgsConstructor
+@RestController
 @Controller
-@RequestMapping("/pelicula")
+@RequestMapping("api/pelicula")
+@CrossOrigin(origins = "http://localhost:4200/")
 public class PeliculaController {
 
     private IPeliculaService peliculaService;
 
-    @GetMapping("")
-    public String listarPeliculas(Model model){
-        model.addAttribute("listarpeliculas" ,
-        		peliculaService.listarPeliculas());
-        return "backoffice/pelicula/formpelicula";
-    }
+ 
 
-    @GetMapping("/list")
+    @GetMapping("/lista")
     @ResponseBody
     public List<Pelicula> listPeliculas(){
         return peliculaService.listarPeliculas();
     }
+    
+    @GetMapping("/buscar/{id}")
+    public Pelicula buscarPelicula(@PathVariable int   id ) {
+    	
+    	return peliculaService.buscar(id);
+    }
+    
+    @PutMapping("/actualizar")
+    public ResponseEntity<?> actualizarPelicula(@RequestBody Pelicula pelicula) {
+    	peliculaService.regitrarPelicula(pelicula);
+    	return ResponseEntity.ok(pelicula);
+    };
 
     @PostMapping("/registrar")
     @ResponseBody
-    public Pelicula registrarPelicula(@RequestBody Pelicula pelicula , Model model){
-
-        return peliculaService.regitrarPelicula(pelicula);
+    public ResponseEntity<?> registrarPelicula(@RequestBody Pelicula pelicula ){
+    	peliculaService.regitrarPelicula(pelicula);
+        return ResponseEntity.ok(pelicula) ;
 
     }
     @DeleteMapping("/eliminar/{id}")

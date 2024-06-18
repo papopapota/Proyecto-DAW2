@@ -30,7 +30,7 @@ public class PeliculaService implements IPeliculaService{
     }
 
     @Override
-    public Pelicula FindById(Integer id) {
+    public Pelicula buscar(Integer id) {
        return PeliculaRepository.findById(id).get();
     }
 

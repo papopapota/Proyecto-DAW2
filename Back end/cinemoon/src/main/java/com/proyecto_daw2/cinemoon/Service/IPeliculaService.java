@@ -13,5 +13,5 @@ public interface IPeliculaService {
     void eliminarPelicula(Integer id);
 
 
-    Pelicula FindById(Integer id);
+    Pelicula buscar(Integer id);
 }
