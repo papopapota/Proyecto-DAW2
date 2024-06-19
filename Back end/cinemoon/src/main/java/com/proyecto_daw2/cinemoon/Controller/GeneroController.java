@@ -9,28 +9,28 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import com.proyecto_daw2.cinemoon.Model.Genero;
 import com.proyecto_daw2.cinemoon.Model.Pelicula;
+import com.proyecto_daw2.cinemoon.Service.IGeneroService;
 import com.proyecto_daw2.cinemoon.Service.IPeliculaService;
-
-import java.util.HashMap;
 import java.util.List;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("api/pelicula")
+@RequestMapping("api/Genero")
 @CrossOrigin(origins = "http://localhost:4200/")
-public class PeliculaController {
+public class GeneroController {
 
-    private IPeliculaService peliculaService;
+    private IGeneroService GeneroService;
 
  
     
     @GetMapping("/lista")
     @ResponseBody
-    public List<Pelicula> listPeliculas(){
-        return peliculaService.listarPeliculas();
+    public List<Genero> listPeliculas(){
+        return GeneroService.listarGenero();
     }
-    
+   /* 
     @GetMapping("/buscar/{id}")
     public Pelicula buscarPelicula(@PathVariable int   id ) {
     	
@@ -46,18 +46,8 @@ public class PeliculaController {
     @PostMapping("/registrar")
     @ResponseBody
     public ResponseEntity<?> registrarPelicula(@RequestBody Pelicula pelicula ){
-    	HashMap<String, Object> salida = new HashMap<>();
-    	try {
-    		peliculaService.regitrarPelicula(pelicula);
-    		
-    		
-    		
-		} catch (Exception e) {
-			// TODO: handle exception
-			salida.put("mensaje", e.getMessage());
-		}
-    	
-        return ResponseEntity.ok(salida) ;
+    	peliculaService.regitrarPelicula(pelicula);
+        return ResponseEntity.ok(pelicula) ;
 
     }
     @DeleteMapping("/eliminar/{id}")
@@ -73,5 +63,5 @@ public class PeliculaController {
         }
         
     }
-
+*/
 }

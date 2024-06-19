@@ -19,7 +19,7 @@ public class Pelicula {
     private String descripcion;
     private String imagen;
     
-    @JoinColumn(name = "id_genero")
+    @Column(name = "id_genero")
     private Integer idGenero;
 
     private Time duracion;
@@ -27,8 +27,8 @@ public class Pelicula {
     private Boolean enestreno;
     
     
-    @ManyToOne(fetch = FetchType.LAZY) // Cambiar a ManyToOne ya que muchas películas pueden pertenecer a un género
-    @JoinColumn(name = "id_genero") // Nombre de la columna que actúa como clave externa en la tabla Peliculas
+    @ManyToOne(fetch = FetchType.EAGER) // Cambiar a ManyToOne ya que muchas películas pueden pertenecer a un género
+    @JoinColumn(name = "id_genero" , updatable = false , insertable = false) // Nombre de la columna que actúa como clave externa en la tabla Peliculas
     private Genero genero; // Cambiar el tipo y el nombre del campo
 
 }
