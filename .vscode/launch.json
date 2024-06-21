@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CinemoonApplication<cinemoon>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.proyecto_daw2.cinemoon.CinemoonApplication",
+            "projectName": "cinemoon",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
