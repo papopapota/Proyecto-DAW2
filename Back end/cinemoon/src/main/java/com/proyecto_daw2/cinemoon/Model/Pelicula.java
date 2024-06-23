@@ -3,7 +3,6 @@ package com.proyecto_daw2.cinemoon.Model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.sql.Date;
 import java.sql.Time;
 
 @Data
