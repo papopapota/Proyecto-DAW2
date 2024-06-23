@@ -1,5 +1,6 @@
 package com.proyecto_daw2.cinemoon.Model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,15 +18,15 @@ public class Boleto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_boleto;
     private int id_funcion;
-
-    @ManyToOne
-    @JoinColumn(name = "id_usuario")
-    private Usuario usuario;
-    
+    private int id_usuario;
     private int cantidad;
     private double Total;
 
-    // @ManyToOne
-    // @JoinColumn(name = "id_funcion", insertable = false, updatable = false)
-    // private Funcion objFuncion;
+     @ManyToOne
+     @JoinColumn(name = "id_funcion", insertable = false, updatable = false)
+     private Funcion funcion;
+     
+     @ManyToOne
+     @JoinColumn(name = "id_usuario", insertable = false, updatable = false)
+     private Usuario usuario;
 }

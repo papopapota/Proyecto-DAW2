@@ -29,7 +29,7 @@
             <label for="duracion">Duracion</label> 
             <input type="text"  [(ngModel)]="newPelicula.duracion" 
                 class="form-control" id="duracion" name="duracion"
-                placeholder="00-00-00">
+                placeholder="00:00:00">
         </div>
         <div class="form-group">
             <label for="idioma">Idioma</label> 
@@ -83,7 +83,9 @@
                         <td >                
                             <input type="checkbox" class="form-check-input" id="enestreno" name="enestreno" [(ngModel)]=" pelicula.enestreno">
                         </td>
-                        <td ><a th:href="@{/editar/} + ${p.id_prod}" class="btn btn-outline-primary">Editar</a></td>
+                        <td ><a (click)="buscarPelicula(pelicula.idpelicula)"  class="btn btn-outline-primary">Editar</a></td>
+                        <td ><a (click)="eliminarPelicula(pelicula.idpelicula)"  class="btn btn-outline-danger">Eliminar</a></td>
+                    
                     </tr>
                 </tbody>
             </table>

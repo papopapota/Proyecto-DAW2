@@ -33,14 +33,19 @@ export class PeliculasCrudAdminComponent {
   };
 
   ngOnInit(): void {
-    this.peliculaService.listar().subscribe(data =>{
-      this.peliculas = data;
-    })
+    this.listarPeliculas();
 
     this.generoService.listar().subscribe(data =>{
       this.listaGeneros = data;
     })
   }
+
+ /* ngAfterViewChecked(){
+    this.peliculaService.listar().subscribe(data =>{
+      this.peliculas = data;
+    })
+  }*/
+  
 
   registrarPelicula(){
     this.peliculaService.registrar(this.newPelicula).subscribe(Response =>{
@@ -56,11 +61,36 @@ export class PeliculasCrudAdminComponent {
         enestreno: true
       };
       this.router.navigate(['']);
+      this.listarPeliculas();
     },
     error =>{
       console.log("Error al registrar la pelicula: " +error);
       console.log(this.newPelicula);
     })
+  }
+
+  buscarPelicula(id:number){
+    this.peliculaService.buscar(id).subscribe(data =>{
+      this.newPelicula = data;
+    })
+  }
+
+  listarPeliculas(){
+    this.peliculaService.listar().subscribe(data =>{
+      this.peliculas = data;
+    })
+  }
+
+  eliminarPelicula(id:number){
+    this.peliculaService.eliminar(id).subscribe(Response =>{
+      console.log("Pelicula eliminada " + Response);
+      this.listarPeliculas();
+
+    },
+    error=>{
+      console.error("Error al eliminar la pelicula: " + error);
+    }
+    )
   }
 
 }

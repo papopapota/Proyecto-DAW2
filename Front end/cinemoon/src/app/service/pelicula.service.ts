@@ -19,7 +19,11 @@ export class PeliculaService {
   }
 
   public buscar(id:number): Observable<any>{
-    return this.http.get<any>(this.urlBase + "/actualizarProducto/" + id);
+    return this.http.get<any>(this.urlBase + "/buscar/" + id);
+  }
+
+  public eliminar(id:number): Observable<any>{
+    return this.http.delete<any>(this.urlBase + "/eliminar/" + id);
   }
 
 }

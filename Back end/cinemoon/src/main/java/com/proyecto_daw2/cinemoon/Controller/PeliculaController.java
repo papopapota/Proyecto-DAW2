@@ -27,8 +27,8 @@ public class PeliculaController {
     
     @GetMapping("/lista")
     @ResponseBody
-    public List<Pelicula> listPeliculas(){
-        return peliculaService.listarPeliculas();
+    public ResponseEntity<List<Pelicula>> listPeliculas(){
+        return ResponseEntity.ok(peliculaService.listarPeliculas());
     }
     
     @GetMapping("/buscar/{id}")
@@ -62,16 +62,18 @@ public class PeliculaController {
     }
     @DeleteMapping("/eliminar/{id}")
     @ResponseBody
-    public void eliminarPelicula(@PathVariable("id") Integer id) {
+    public String eliminarPelicula(@PathVariable("id") Integer id) {
         String mensaje = "Pelicula eliminada correctamente";
         boolean respuesta = true;
         try {
         	peliculaService.eliminarPelicula(id);
+        	mensaje = "Se elimino correctamente";
         } catch (Exception ex) {
-            mensaje = "Error al eliminar la película";
+            mensaje = "Error al eliminar la película: " + ex.getMessage();
             respuesta = false;
         }
         
+        return mensaje ;
     }
 
 }
