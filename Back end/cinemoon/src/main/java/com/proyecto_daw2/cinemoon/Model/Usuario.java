@@ -1,5 +1,6 @@
 package com.proyecto_daw2.cinemoon.Model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,7 +16,9 @@ import lombok.Data;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_usuario;
+    @Column(name="id_usuario")
+    private int idusuario;
+
     private String nombre_usuario;
     private String apellido_usuario;
     private String dni;
