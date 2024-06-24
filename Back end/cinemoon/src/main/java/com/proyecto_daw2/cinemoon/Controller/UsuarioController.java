@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.proyecto_daw2.cinemoon.Model.Pelicula;
 import com.proyecto_daw2.cinemoon.Model.Usuario;
 import com.proyecto_daw2.cinemoon.Service.IUsuarioService;
 import lombok.AllArgsConstructor;
@@ -31,8 +30,8 @@ public class UsuarioController {
 
     @GetMapping("/lista")
     @ResponseBody
-    public List<Usuario> listarUsuarios(){
-        return usuarioService.listarUsuarios();
+    public ResponseEntity<List<Usuario>> listarUsuarios(){
+        return ResponseEntity.ok(usuarioService.listarUsuarios());
     }
 
     @PostMapping("/registrar")
