@@ -8,7 +8,7 @@ import { UsuariosActualizarUsuarioComponent } from './usuarios-actualizar-usuari
 import { UsuariosDetalleAdminComponent } from './usuarios-detalle-admin/usuarios-detalle-admin.component';
 import { BoletosListaUsuarioComponent } from './boletos-lista-usuario/boletos-lista-usuario.component';
 const routes: Routes = [ 
-  {path: '', component: BoletosListaUsuarioComponent},
+  {path: '', component: UsuariosRegistroUsuarioComponent},
   {path: 'CompraBoleto', component: BoletoCompraComponent},
   {path: 'ListaUsuarios', component: UsuariosListaAdminComponent},
   {path: 'ListaPeliculas', component: PeliculasCrudAdminComponent},
