@@ -9,4 +9,5 @@ public interface IUsuarioService {
     public abstract Usuario registrarUsuario(Usuario usuario);
     public abstract void eliminarUsuario(int id);
     public abstract Usuario buscar(int id);
+    public abstract Usuario authenticate(String correo, String clave);
 }

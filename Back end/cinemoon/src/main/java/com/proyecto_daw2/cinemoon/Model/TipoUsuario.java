@@ -1,5 +1,6 @@
 package com.proyecto_daw2.cinemoon.Model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -10,6 +11,8 @@ import lombok.Data;
 @Data
 public class TipoUsuario {
     @Id
-    private int id_tipo_usuario;
-    private String descripcion_tipo_usuario;
+    @Column(name = "id_tipo_usuario")
+    private int idtipousuario;
+    @Column(name = "descripcion_tipo_usuario")
+    private String descripciontipousuario;
 }

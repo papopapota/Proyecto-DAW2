@@ -18,12 +18,14 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_usuario")
     private int idusuario;
-
     private String nombre_usuario;
     private String apellido_usuario;
     private String dni;
-    private String correo_usuario;
-    private String clave_usuario;
+    @Column(name="correo_usuario")
+    private String correo;
+    @Column(name="clave_usuario")
+    private String clave;
+
     private int id_tipo_usuario;
 
     @ManyToOne

@@ -13,9 +13,10 @@ export class PeliculasListarUsuarioComponent {
 ) { }
 
   public peliculas: Pelicula[] = [];
-
+  idtipoUsuario: number = 1;
   ngOnInit(): void {
     this.listarPeliculas();
+    
   }
   listarPeliculas(){
     this.peliculaService.listar().subscribe(data =>{
