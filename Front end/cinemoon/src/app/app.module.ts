@@ -9,12 +9,22 @@ import { Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BoletoCompraComponent } from './boleto-compra/boleto-compra.component';
+import { UsuariosListaAdminComponent } from './usuarios-lista-admin/usuarios-lista-admin.component';
+import { NavComponent } from './nav/nav.component';
+import { UsuariosRegistroUsuarioComponent } from './usuarios-registro-usuario/usuarios-registro-usuario.component';
+import { UsuariosActualizarUsuarioComponent } from './usuarios-actualizar-usuario/usuarios-actualizar-usuario.component';
+import { UsuariosDetalleAdminComponent } from './usuarios-detalle-admin/usuarios-detalle-admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PeliculasCrudAdminComponent,
-    BoletoCompraComponent
+    BoletoCompraComponent,
+    UsuariosListaAdminComponent,
+    NavComponent,
+    UsuariosRegistroUsuarioComponent,
+    UsuariosActualizarUsuarioComponent,
+    UsuariosDetalleAdminComponent
   ],
   imports: [
     BrowserModule,
