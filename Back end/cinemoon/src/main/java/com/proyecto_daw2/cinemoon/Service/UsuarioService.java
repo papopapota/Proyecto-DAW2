@@ -36,4 +36,14 @@ public class UsuarioService implements IUsuarioService{
     public Usuario buscar(int id) {
         return usuarioRepository.findById(id).get();
     }
+    
+    @Override
+    public Usuario authenticate(String correo, String clave) {
+        Usuario usuario = usuarioRepository.findByCorreoAndClave(correo, clave);
+        if (usuario != null && usuario.getClave().equals(clave)) {
+            return usuario;
+        } else {
+            return null;
+        }
+    }
 }

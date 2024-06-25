@@ -1,7 +1,10 @@
-import { Component ,ViewChildren, QueryList, ElementRef, AfterViewInit } from '@angular/core';
+import { Component ,ViewChild,ViewChildren, QueryList, ElementRef, AfterViewInit } from '@angular/core';
 import { Asiento } from '../model/asiento';
 import { AsientoService } from '../service/asiento.service';
 import { AppModule } from '../app.module';
+import { BoletoService } from '../service/boleto.service';
+import { UtilCompraBoleto } from '../model/util-compra-boleto';
+import { Funcion } from '../model/funcion';
 
 
 @Component({
@@ -12,16 +15,43 @@ import { AppModule } from '../app.module';
 })
 export class BoletoCompraComponent {
 
-  constructor(private asientoService: AsientoService) {}
+  constructor(private asientoService: AsientoService , private boletoService : BoletoService) {}
+
+  public lstAsiento: Asiento[] = [];
+
+  public utilCompraBoleto : UtilCompraBoleto = {} as UtilCompraBoleto;
+
+  public lstFuncion: Funcion[] = [] ;
+
+  public precioSala: number = 0;
+
+  public nombreApellidos: string = "";
 
   public asientos: Asiento[] = [];
 
   @ViewChildren('asientoRef') asientosRef: QueryList<ElementRef> = new QueryList();
 
+  @ViewChild('cantidadTextField') cantidadTextField: ElementRef | undefined;
+  @ViewChild('totalTextField') totalTextField: ElementRef | undefined;
+  @ViewChild('idFuncion') idFuncion: ElementRef | undefined;
+  @ViewChild('butacasCodigo') butacasCodigo: ElementRef | undefined;
 
+  
   ngOnInit(): void {
-    this.asientoService.listarPorPelicula(1).subscribe( data =>{
-      this.asientos = data
+    this.boletoService.listarPorPelicula(1).subscribe( data =>{
+
+      this.utilCompraBoleto = data ;
+      console.log(this.utilCompraBoleto);
+      if (this.utilCompraBoleto ) {
+        this.lstAsiento = this.utilCompraBoleto.lstAsiento;
+        this.lstFuncion = this.utilCompraBoleto.lstFuncion;
+        this.precioSala = this.utilCompraBoleto.precioSala;
+        this.nombreApellidos = this.utilCompraBoleto.nombresApellidos;
+      }else{
+        console.log("util compra esta vacio ");
+      }
+
+    
     }
   );
 
@@ -36,16 +66,17 @@ export class BoletoCompraComponent {
   }
 
   ngAfterContentInit() {
+
   }
     loadScripts() {
   
       const dynamicScripts = [
-         'src/app/Assets/buyTikect.js'
+         'assets/js/buyTikect.js'
       ];
       for (let i = 0; i < dynamicScripts.length; i++) {
         const node = document.createElement('script');
         node.src = dynamicScripts[i];
-        node.type = 'text/javascript';
+        //node.type = 'application/javascript';
         node.async = false;
         document.getElementsByTagName('body')[0].appendChild(node);
       }
@@ -59,5 +90,19 @@ export class BoletoCompraComponent {
     
     script.async = false;
     document.body.appendChild(script);
+  }
+
+  comprarBoleto() {
+    console.log("comprar boleto");
+    
+    let cantidad = parseInt( this.cantidadTextField?.nativeElement.value); 
+    let total = parseFloat( this.totalTextField?.nativeElement.value);
+    let idFuncion =  parseInt(this.idFuncion?.nativeElement.value);
+    let butacasCodigo =  this.butacasCodigo?.nativeElement.value;
+    console.log(this.cantidadTextField?.nativeElement.value);
+    this.boletoService.comprarBoleto( cantidad, total , idFuncion , butacasCodigo).subscribe(Response => {
+      
+      console.log(Response);
+    });
   }
 }

@@ -10,5 +10,7 @@ export interface Usuario {
     clave: string;
     id_tipo_usuario: number;
 
-    objTipoUsuario: TipoUsuario;
+    //objTipoUsuario ?: TipoUsuario;
+    objTipoUsuario ?: TipoUsuario
+
 }

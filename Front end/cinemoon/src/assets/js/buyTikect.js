@@ -4,14 +4,13 @@ let clase = 'chairSelected';
 let claseQuitar = 'text-black-50';
 var textoSillasCode ;
 
-document.addEventListener('DOMContentLoaded', function() {
+//document.addEventListener('DOMContentLoaded', function() {
     butacasField = document.querySelector('#ButacasField');
     chairs = document.querySelectorAll('.chair');
     clase = 'chairSelected';
     claseQuitar = 'text-black-50';
     textoSillasCode = butacasField.value;
 
-console.log(chairs);
     chairs.forEach(chair => {
         chair.addEventListener('click' , function(Event){
             if(chair.classList.contains(clase)){
@@ -59,7 +58,7 @@ console.log(chairs);
             CalcularTotal(textoSillasCode);
         });
     });
-});
+//});
 
 function init() {
     

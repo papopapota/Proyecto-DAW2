@@ -45,14 +45,14 @@ public class AsientoController {
     
     
     
-    private final BoletoService tikectService;
-    private  final  PeliculaService peliculaService;
-    private final AsientoService asientoService;
-    private final FuncionService funcionService;
-    private final SalaService salaService;
-    private final UsuarioService UsuarioService;
-    private  final IDetalleBoletoRepository DetalleBoletorepo;
-    private  final  UsuarioService usuarioService;
+    private   BoletoService tikectService;
+    private     PeliculaService peliculaService;
+    private   AsientoService asientoService;
+    private   FuncionService funcionService;
+    private   SalaService salaService;
+    private   UsuarioService UsuarioService;
+    private    IDetalleBoletoRepository DetalleBoletorepo;
+    private     UsuarioService usuarioService;
    
     
     List<String> ListaIds (){
