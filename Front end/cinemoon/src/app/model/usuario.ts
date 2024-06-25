@@ -6,8 +6,8 @@ export interface Usuario {
     nombre_usuario: string;
     apellido_usuario: string;
     dni: string;
-    correo_usuario: string;
-    clave_usuario: string;
+    correo: string;
+    clave: string;
     id_tipo_usuario: number;
 
     objTipoUsuario: TipoUsuario;

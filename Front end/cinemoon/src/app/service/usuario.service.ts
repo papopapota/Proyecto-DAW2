@@ -21,11 +21,7 @@ export class UsuarioService {
   }
 
   public buscar(id: number): Observable<Usuario>{
-    return this.http.get<Usuario>(this.urlBase + "/buscar/${id}");
-  }
-
-  public actualizar(id: number, usuario: Usuario): Observable<any>{
-    return this.http.put(this.urlBase + "/actualizar/${id}", usuario);
+    return this.http.get<Usuario>(this.urlBase + "/"+ id);
   }
 
   public eliminar(id: number): Observable<any>{

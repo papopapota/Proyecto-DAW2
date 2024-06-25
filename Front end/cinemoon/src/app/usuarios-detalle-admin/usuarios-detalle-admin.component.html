@@ -1,17 +1,19 @@
+<app-navbar></app-navbar>
 <div class="container">
+    <h1>Detalle del usuario</h1>
     <main class="bg-light badge d-flex justify-content-center mt-5">
         <div class="d-flex justify-content-center mt-5">
             <div class=" d-flex container text-center m-5">
                 <div class="d-flex  align-items-center col align-items-center row">
                     <div class="rounded-circle ">
-                        <img height="150em" width="auto" src="../static/img/userIcon.png">
+                        <img height="150em" width="auto" src="assets/img/userIcon.png">
                         <p id="showNameSurname" class="fs-2 text-dark-emphasis mt-0"></p>
                         <p id="showEmail" class="fs-2 text-dark-emphasis mt-0"></p>
                     </div>
                 </div>
                 <div class="col bottomAct line-between-columns">
                     <div class="ml-0 link-left">
-                        <a class="btn fw-bold col-12 " role="button" data-bs-toggle="button" href="#">Regresar</a>
+                        <a class="btn fw-bold col-12 " role="button" data-bs-toggle="button" routerLink="/ListaUsuarios">Regresar</a>
                     </div>
                     <p></p>
                     <form class="w-100 m-5" object="" action=""
@@ -19,21 +21,21 @@
                         <div class="col-12  container">
                             <input type="text"
                                 class="form-control form-control-lg mr-4 d-none" placeholder="Nombres"
-                                aria-label="Nombres" for="nombre_usuario" id="nombre_usuario" name="nombre_usuario">
+                                aria-label="Nombres" for="nombre_usuario" id="nombre_usuario" name="nombre_usuario" [(ngModel)]="usuario.nombre_usuario">
                             <div class="input-group mb-4 ">
                                 <input type="text" id="nombreTextField" class="form-control form-control-lg mr-4"
-                                placeholder="Nombres" aria-label="Name" for="nombre_usuario" id="nombre_usuario" name="nombre_usuario">
+                                placeholder="Nombres" aria-label="Name" for="nombre_usuario" id="nombre_usuario" name="nombre_usuario" [(ngModel)]="usuario.nombre_usuario" disabled>
                                 <input type="text" id="apellidoTextField" class="form-control form-control-lg mr-4"
-                                placeholder="Apellidos" aria-label="Surname" for="apellido_usuario" id="apellido_usuario" name="apellido_usuario">
+                                placeholder="Apellidos" aria-label="Surname" for="apellido_usuario" id="apellido_usuario" name="apellido_usuario" [(ngModel)]="usuario.apellido_usuario" disabled>
                             </div>
                             <input type="number" class="form-control form-control-lg mb-4"
-                                placeholder="DNI" aria-label="DNI" for="dni" id="dni" name="dni" >
+                                placeholder="DNI" aria-label="DNI" for="dni" id="dni" name="dni" [(ngModel)]="usuario.dni" disabled>
                             <input type="email" id="correoTextField" class="form-control form-control-lg mb-4"
-                            placeholder="Correo Electronico" aria-label="Email" for="correo_usuario" id="correio_usuario" name="correo_usuario" >
+                            placeholder="Correo Electronico" aria-label="Email" for="correo" id="correo" name="correo" [(ngModel)]="usuario.correo" disabled>
                             <input type="password" class="form-control form-control-lg mb-4"
-                                placeholder="Contraseña" aria-label="Password" for="clave_usuario" id="clave_usuario" name="clave_usuario" >
+                                placeholder="Contraseña" aria-label="Password" for="clave" id="clave" name="clave" [(ngModel)]="usuario.clave" disabled>
                             <input type="text" class="form-control form-control-lg mb-4"
-                                placeholder="Tipo" aria-label="Type" for="objTipoUsuario" id="objTipoUsuario" name="objTipoUsuario">
+                                placeholder="Tipo" aria-label="Type" for="objTipoUsuario" id="objTipoUsuario" name="objTipoUsuario" [(ngModel)]="usuario.objTipoUsuario.descripcion_tipo_usuario" disabled>
                         </div>
                     </form>
                 </div>
