@@ -24,6 +24,9 @@ public class Funcion {
     private Date fechaFuncion ;
     private Time horaInicio ;
     private Time horaFin ;
+    
+    
+    
 
     public String getFechaFuncionFormateada() {
         // Define el formato que deseas para la fecha

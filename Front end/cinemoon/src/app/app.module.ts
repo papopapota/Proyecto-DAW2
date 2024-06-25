@@ -8,11 +8,13 @@ import { PeliculasCrudAdminComponent } from './peliculas-crud-admin/peliculas-cr
 import { Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BoletoCompraComponent } from './boleto-compra/boleto-compra.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PeliculasCrudAdminComponent
+    PeliculasCrudAdminComponent,
+    BoletoCompraComponent
   ],
   imports: [
     BrowserModule,

@@ -24,7 +24,7 @@ public class DetalleBoleto {
     private int id_asiento;
 
 
-    // @ManyToOne
-    // @JoinColumn(name = "id_asiento", insertable = false, updatable = false)
-    // private Asiento objAsiento;
+     @ManyToOne
+     @JoinColumn(name = "id_asiento", insertable = false, updatable = false)
+     private Asiento objAsiento;
 }
