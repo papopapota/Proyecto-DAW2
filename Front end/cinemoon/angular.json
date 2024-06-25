@@ -33,13 +33,14 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/assets",
+                "output": "/assets/"
               }
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["src/app/Assets/buyTikect.js"]
           },
           "configurations": {
             "production": {

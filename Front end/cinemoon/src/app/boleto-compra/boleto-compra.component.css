@@ -1,0 +1,79 @@
+
+.bottomLogin{
+    margin-top: 6em;
+}
+
+.colorFondo{
+    background-color: #E7EDF2;
+}
+
+    .line-between-columns {
+      border-left: 1px solid #bbbaba; /* Change the color and width as needed */
+      height: 100%;
+    }
+.link-left{
+    margin-left: -27em;
+}
+
+.textChair{
+color: white;
+ color: white;
+margin-left: -2.7em;
+  margin-top: 0.4em;
+  font-size: 0.4em;
+     position: absolute;
+     text-shadow: 2px 2px #020202;
+
+}
+
+.poetsen-one-regular {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.navbar{
+     background-color: #2D3142 !important;
+}
+.navbarAdmin{
+    background-color: #34004D !important;
+}
+.poetsen-one-regular {
+  font-family: "Jaro", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #ff661c !important;
+}
+
+.customLogo{
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  letter-spacing: 7px;
+}
+span{
+    color: #EF8354;
+      letter-spacing: 2px;
+
+}
+.containChairs{
+padding: 0em 5em;
+
+}
+
+.chairSelected{
+color: blue !important;
+  
+}
+
+#carouselExampleCaptions{
+margin-top: -3.0em !important;
+}
+/*
+.carousel-item img{
+    height: 60em;
+}*/
+/*
+#contenedorCarrousel button{
+    height : 10em;
+
+}*/

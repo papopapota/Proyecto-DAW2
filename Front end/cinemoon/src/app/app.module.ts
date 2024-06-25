@@ -8,10 +8,13 @@ import { PeliculasCrudAdminComponent } from './peliculas-crud-admin/peliculas-cr
 import { Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
 import { LoginComponent } from './login/login.component';
 import { PeliculasListarUsuarioComponent } from './peliculas-listar-usuario/peliculas-listar-usuario.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CarruselComponent } from './carrusel/carrusel.component';
+import { BoletoCompraComponent } from './boleto-compra/boleto-compra.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import { CarruselComponent } from './carrusel/carrusel.component';
     LoginComponent,
     PeliculasListarUsuarioComponent,
     NavbarComponent,
-    CarruselComponent
+    CarruselComponent,
+    BoletoCompraComponent
   ],
   imports: [
     BrowserModule,
