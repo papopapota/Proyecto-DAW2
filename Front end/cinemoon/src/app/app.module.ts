@@ -9,12 +9,18 @@ import { Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { PeliculasListarUsuarioComponent } from './peliculas-listar-usuario/peliculas-listar-usuario.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { CarruselComponent } from './carrusel/carrusel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PeliculasCrudAdminComponent,
-    LoginComponent
+    LoginComponent,
+    PeliculasListarUsuarioComponent,
+    NavbarComponent,
+    CarruselComponent
   ],
   imports: [
     BrowserModule,
