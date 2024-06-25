@@ -29,7 +29,7 @@ import { BoletosListaUsuarioComponent } from './boletos-lista-usuario/boletos-li
     UsuariosRegistroUsuarioComponent,
     UsuariosActualizarUsuarioComponent,
     UsuariosDetalleAdminComponent,
-    BoletosListaUsuarioComponent
+    BoletosListaUsuarioComponent,
     LoginComponent,
     PeliculasListarUsuarioComponent,
     NavbarComponent,

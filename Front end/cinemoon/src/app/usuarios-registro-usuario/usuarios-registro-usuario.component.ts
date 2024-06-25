@@ -21,8 +21,8 @@ export class UsuariosRegistroUsuarioComponent {
     nombre_usuario: "",
     apellido_usuario: "",
     dni: "",
-    correo_usuario: "",
-    clave_usuario: "",
+    correo: "",
+    clave: "",
     id_tipo_usuario: 1,
     objTipoUsuario: {
       id_tipo_usuario: 1,
@@ -39,8 +39,8 @@ export class UsuariosRegistroUsuarioComponent {
           nombre_usuario: "",
           apellido_usuario: "",
           dni: "",
-          correo_usuario: "",
-          clave_usuario: "",
+          correo: "",
+          clave: "",
           id_tipo_usuario: 1,
           objTipoUsuario: {
             id_tipo_usuario: 1,

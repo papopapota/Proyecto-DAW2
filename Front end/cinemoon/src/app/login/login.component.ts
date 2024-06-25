@@ -18,15 +18,16 @@ export class LoginComponent {
     idusuario: 0,
     nombre_usuario: '',
     apellido_usuario: '',
+    dni: '',
     correo: '',
     clave: '',
-    dni: '',
     id_tipo_usuario: 1,
 }
 login() {
   this.loginService.login(this.username, this.password).subscribe((data: Usuario ) => {
     if (data != null) {
       this.user = data;
+      console.log(this.user);
       this.successMessage = 'Login correcto';
       if (this.user.id_tipo_usuario == 1) {
         this.router.navigate(['/peliculas']);
