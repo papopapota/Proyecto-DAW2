@@ -14,17 +14,28 @@ import { PeliculasListarUsuarioComponent } from './peliculas-listar-usuario/peli
 import { NavbarComponent } from './navbar/navbar.component';
 import { CarruselComponent } from './carrusel/carrusel.component';
 import { BoletoCompraComponent } from './boleto-compra/boleto-compra.component';
+import { UsuariosListaAdminComponent } from './usuarios-lista-admin/usuarios-lista-admin.component';
+import { UsuariosRegistroUsuarioComponent } from './usuarios-registro-usuario/usuarios-registro-usuario.component';
+import { UsuariosActualizarUsuarioComponent } from './usuarios-actualizar-usuario/usuarios-actualizar-usuario.component';
+import { UsuariosDetalleAdminComponent } from './usuarios-detalle-admin/usuarios-detalle-admin.component';
+import { BoletosListaUsuarioComponent } from './boletos-lista-usuario/boletos-lista-usuario.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PeliculasCrudAdminComponent,
+    UsuariosListaAdminComponent,
+    UsuariosRegistroUsuarioComponent,
+    UsuariosActualizarUsuarioComponent,
+    UsuariosDetalleAdminComponent,
+    BoletosListaUsuarioComponent
     LoginComponent,
     PeliculasListarUsuarioComponent,
     NavbarComponent,
     CarruselComponent,
     BoletoCompraComponent
+
   ],
   imports: [
     BrowserModule,

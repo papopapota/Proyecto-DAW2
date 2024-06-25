@@ -33,8 +33,8 @@ public class UsuarioController {
 
     @GetMapping("/lista")
     @ResponseBody
-    public List<Usuario> listarUsuarios(){
-        return usuarioService.listarUsuarios();
+    public ResponseEntity<List<Usuario>> listarUsuarios(){
+        return ResponseEntity.ok(usuarioService.listarUsuarios());
     }
 
     @PostMapping("/registrar")
@@ -51,8 +51,8 @@ public class UsuarioController {
     }
 
     @GetMapping("/buscar/{id}")
-    public Usuario buscar(@PathVariable int   id ) {
-    	return usuarioService.buscar(id);
+    public ResponseEntity<Usuario> buscar(@PathVariable int   id ) {
+    	return ResponseEntity.ok(usuarioService.buscar(id));
     }
     
     @PutMapping("/actualizar")

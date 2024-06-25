@@ -1,6 +1,7 @@
 import { TipoUsuario } from "./tipo-usuario";
 
 export interface Usuario {
+
     idusuario: number;
     nombre_usuario: string;
     apellido_usuario: string;
@@ -11,4 +12,5 @@ export interface Usuario {
 
     //objTipoUsuario ?: TipoUsuario;
     objTipoUsuario ?: TipoUsuario
+
 }
