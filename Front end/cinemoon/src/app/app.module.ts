@@ -10,10 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BoletoCompraComponent } from './boleto-compra/boleto-compra.component';
 import { UsuariosListaAdminComponent } from './usuarios-lista-admin/usuarios-lista-admin.component';
-import { NavComponent } from './nav/nav.component';
 import { UsuariosRegistroUsuarioComponent } from './usuarios-registro-usuario/usuarios-registro-usuario.component';
 import { UsuariosActualizarUsuarioComponent } from './usuarios-actualizar-usuario/usuarios-actualizar-usuario.component';
 import { UsuariosDetalleAdminComponent } from './usuarios-detalle-admin/usuarios-detalle-admin.component';
+import { BoletosListaUsuarioComponent } from './boletos-lista-usuario/boletos-lista-usuario.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +21,10 @@ import { UsuariosDetalleAdminComponent } from './usuarios-detalle-admin/usuarios
     PeliculasCrudAdminComponent,
     BoletoCompraComponent,
     UsuariosListaAdminComponent,
-    NavComponent,
     UsuariosRegistroUsuarioComponent,
     UsuariosActualizarUsuarioComponent,
-    UsuariosDetalleAdminComponent
+    UsuariosDetalleAdminComponent,
+    BoletosListaUsuarioComponent
   ],
   imports: [
     BrowserModule,
