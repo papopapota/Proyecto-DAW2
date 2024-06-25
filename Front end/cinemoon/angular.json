@@ -40,7 +40,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": ["src/app/Assets/buyTikect.js"]
+            "scripts": []
           },
           "configurations": {
             "production": {

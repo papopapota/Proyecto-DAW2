@@ -17,14 +17,17 @@ public class DetalleBoleto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_detalle;
 
-    @ManyToOne
-    @JoinColumn(name = "id_boleto")
-    private Boleto objBoleto;
-
+    private int id_boleto;
     private int id_asiento;
 
 
      @ManyToOne
      @JoinColumn(name = "id_asiento", insertable = false, updatable = false)
      private Asiento objAsiento;
+     
+     
+     @ManyToOne
+     @JoinColumn(name = "id_boleto", insertable = false, updatable = false)
+     private Boleto objBoleto;
+
 }

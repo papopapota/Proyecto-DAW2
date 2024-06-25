@@ -1,3 +1,7 @@
+.stateRead{
+  background-color: var(--bs-secondary-bg);
+}
+
 
 .bottomLogin{
     margin-top: 6em;
