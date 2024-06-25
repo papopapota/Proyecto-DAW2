@@ -24,7 +24,7 @@ export class UsuariosListaAdminComponent {
     })
   }
 
-  detalleUsuario(idusuario: number): void {
+  detalleUsuario(idusuario: number) {
     this.router.navigate(['/DetalleUsuario', idusuario]);
   }
 

@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -8,7 +9,6 @@
                 <th>Codigo</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
-                <th>Email</th>
                 <th>Tipo</th>
                 <th>Acciones</th>
             </tr>
@@ -18,7 +18,6 @@
                 <td>{{d.idusuario}}</td>
                 <td>{{d.nombre_usuario}}</td>
                 <td>{{d.apellido_usuario}}</td>
-                <td>{{d.correo}}</td>
                 <td>{{d.objTipoUsuario?.descripcion_tipo_usuario}}</td>
                 <td>
                     <button class=" btn btn-info" (click)="detalleUsuario(d.idusuario)">Detalle</button>

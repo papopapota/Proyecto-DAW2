@@ -3,13 +3,13 @@
         <div class="col">
             <div class="d-flex align-items-center">
                 <div class="rounded-circle row">
-                    <img height="300px">
+                    <img height="300px" src="assets/img/logoCinemax.jpg">
                 </div>
                 <h3 class=" fw-bold fs-1">Cinemoon</h3>
             </div>
             <div class="bottomLogin" style="margin: 0">
                 <div class="d-flex align-items-center pt-n2">
-                    <a class="btn fw-bold me-auto p-2 row">Volver a iniciar sesión</a>
+                    <a class="btn fw-bold me-auto p-2 row" routerLink="/login">Volver a iniciar sesión</a>
                 </div>
                 <p class="fs-2">Bienvenidos a Cinemoon</p>
                 <form class="" (ngSubmit)="registrarUsuario()">
@@ -22,10 +22,10 @@
                         </div>
                         <input type="number" for="dni" class="form-control form-control-lg row mb-4"
                             placeholder="DNI" aria-label="DNI" id="dni" name="dni" [(ngModel)]="newUsuario.dni">
-                        <input type="text" for="correo_usuario" class="form-control form-control-lg row mb-4"
-                            placeholder="Correo Electronico" aria-label="Email" id="correo_usuario" name="correo_usuario" [(ngModel)]="newUsuario.correo">
-                        <input type="password" for="clave_usuario" class="form-control form-control-lg row mb-4"
-                            placeholder="Contraseña" aria-label="Password" id="clave_usuario" name="clave_usuario" [(ngModel)]="newUsuario.clave">
+                        <input type="text" for="correo" class="form-control form-control-lg row mb-4"
+                            placeholder="Correo Electronico" aria-label="Email" id="correo" name="correo" [(ngModel)]="newUsuario.correo">
+                        <input type="password" for="clave" class="form-control form-control-lg row mb-4"
+                            placeholder="Contraseña" aria-label="Password" id="clave" name="clave" [(ngModel)]="newUsuario.clave">
                         <button class="col-12 btn btn-secondary mb-1 row mb-4 p-3 fw-bold fs-5"
                             type="submit">Registrar</button>
                     </div>
@@ -34,7 +34,7 @@
         </div>
 
         <div class="col ">
-            <img class="img-fluid" src="" style="width: 100%; height: 100vh;">
+            <img class="img-fluid" src="assets/img/fondoLogin.jpg" style="width: 100%; height: 100vh;">
         </div>
     </div>
 

@@ -4,7 +4,6 @@ import { PeliculasCrudAdminComponent } from './peliculas-crud-admin/peliculas-cr
 import { LoginComponent } from './login/login.component';
 import { PeliculasListarUsuarioComponent } from './peliculas-listar-usuario/peliculas-listar-usuario.component';
 import { BoletoCompraComponent } from './boleto-compra/boleto-compra.component';
-
 import { UsuariosListaAdminComponent } from './usuarios-lista-admin/usuarios-lista-admin.component';
 import { UsuariosRegistroUsuarioComponent } from './usuarios-registro-usuario/usuarios-registro-usuario.component';
 import { UsuariosActualizarUsuarioComponent } from './usuarios-actualizar-usuario/usuarios-actualizar-usuario.component';
@@ -21,7 +20,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'peliculas', component: PeliculasListarUsuarioComponent},
   {path: 'CompraBoleto', component: BoletoCompraComponent},
-  {path: '', redirectTo: '/login', pathMatch: 'full'}
+  {path: '', redirectTo: '/ListaUsuarios', pathMatch: 'full'}
 
 ];
 

@@ -50,10 +50,10 @@ public class UsuarioController {
         return ResponseEntity.ok(salida) ;
     }
 
-    @GetMapping("/buscar/{id}")
-    public ResponseEntity<Usuario> buscar(@PathVariable int   id ) {
-    	return ResponseEntity.ok(usuarioService.buscar(id));
-    }
+    @GetMapping("/{id}")
+	public ResponseEntity<Usuario> buscarUsuario(@PathVariable int id) {
+		return ResponseEntity.ok(usuarioService.buscar(id));
+	}
     
     @PutMapping("/actualizar")
     public ResponseEntity<?> actualizarUsuario(@RequestBody Usuario usuario) {
