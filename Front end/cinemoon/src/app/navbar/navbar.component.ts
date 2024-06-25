@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-tipoUsuario: number = 2;
+tipoUsuario: number = 1;
 
 }

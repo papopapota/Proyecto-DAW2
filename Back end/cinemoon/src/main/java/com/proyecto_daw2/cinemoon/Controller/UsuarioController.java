@@ -15,10 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.proyecto_daw2.cinemoon.Model.Pelicula;
 import com.proyecto_daw2.cinemoon.Model.Usuario;
 import com.proyecto_daw2.cinemoon.Service.IUsuarioService;
+
+import jakarta.servlet.http.HttpSession;
 import lombok.AllArgsConstructor;
+
 
 @AllArgsConstructor
 @RestController
@@ -70,4 +72,11 @@ public class UsuarioController {
     public void eliminarUsuario(@PathVariable("id") int id) {
         usuarioService.eliminarUsuario(id);
     }
+
+    @GetMapping("/obtenerUsuario")
+    public ResponseEntity<?> obtenerUsuario(HttpSession session) {
+        Usuario usuario = (Usuario) session.getAttribute("usuario");
+        return ResponseEntity.ok(usuario);
+    }
+    
 }
