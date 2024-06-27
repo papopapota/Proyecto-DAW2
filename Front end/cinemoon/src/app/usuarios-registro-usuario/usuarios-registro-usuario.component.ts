@@ -24,11 +24,7 @@ export class UsuariosRegistroUsuarioComponent {
     correo: "",
     clave: "",
     id_tipo_usuario: 1,
-    objTipoUsuario: {
-      id_tipo_usuario: 1,
-      descripcion_tipo_usuario: "Cliente"
-    }
-  };
+    };
 
   registrarUsuario() {
     this.usuarioService.registrar(this.newUsuario).subscribe(
@@ -42,9 +38,7 @@ export class UsuariosRegistroUsuarioComponent {
           correo: "",
           clave: "",
           id_tipo_usuario: 1,
-          objTipoUsuario: {
-            id_tipo_usuario: 1,
-            descripcion_tipo_usuario: "Cliente"}};
+          };
         this.router.navigate(['/ListaUsuarios']);
           },
           error => {
