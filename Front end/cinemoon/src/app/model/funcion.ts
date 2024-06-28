@@ -1,4 +1,5 @@
 import { Time } from "@angular/common";
+import { Pelicula } from "./pelicula";
 
 export interface Funcion {
     idFuncion:number;
@@ -8,4 +9,6 @@ export interface Funcion {
     horaInicio:Time;
     horaFin:Time;
     fechaFuncionFormateada:string;
+
+    objPelicula: Pelicula;
 }
