@@ -21,9 +21,12 @@ public class Funcion {
     private int idPelicula;
     @Column(name = "id_sala")
     private int idSala;
-
+    
+    @Column(name = "fecha_funcion")
     private Date fechaFuncion ;
+    @Column(name = "hora_inicio")
     private Time horaInicio ;
+    @Column(name = "hora_fin")
     private Time horaFin ;
     
     
