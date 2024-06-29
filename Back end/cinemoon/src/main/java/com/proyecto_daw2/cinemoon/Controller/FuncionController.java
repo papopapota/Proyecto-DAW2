@@ -44,6 +44,7 @@ public class FuncionController {
 	public ResponseEntity<?> guardarFuncion(@RequestBody Funcion funcion ){
 		HashMap<String, Object> salida = new HashMap<>();
     	try {
+    		System.out.println(funcion);
     		serviceFuncion.save(funcion);
     		salida.put("mensaje", "Se guardo la funcion n° "+ funcion.getIdFuncion());
     		
