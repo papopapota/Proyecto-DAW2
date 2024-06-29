@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row">
+            <div class="col-6 col-sm-4">
+    <h1>Mantenimiento de Peliculas</h1>
+
+    <div *ngIf="mensaje" class="alert alert-success" role="alert">
+        {{ mensaje }}
+      </div>
+    <form  method="post" (ngSubmit)="registrarPelicula()">
+        
+        <div class="form-group">
+            <label for="inputCod">Código</label> 
+            <input type="idpelicula"  [(ngModel)]="newProducto.idproducto" 
+                class="form-control" id="idpelicula" name="idpelicula" placeholder="Código">
+        </div>
+        <div class="form-group">
+            <label for="titulo">Nombre</label> 
+            <input type="text"  [(ngModel)]="newProducto.nombre" 
+                class="form-control" id="titulo" name="titulo"
+                placeholder="Titulo">
+        </div>
+            <div class="form-group col-md-12">
+                <label for="Descripcion">Descripcion</label> 
+                <input type="text"  [(ngModel)]="newProducto.descripcion" 
+                    class="form-control" id="Descripcion" name="Descripcion" placeholder="Descripcion">
+            </div>
+            <div class="form-group col-md-12">
+                <label for="imagen">Precio</label> 
+                <input type="number"   [(ngModel)]="newProducto.precio" 
+                    class="form-control" id="imagen" name="imagen" placeholder="Imagen">
+            </div>
+        
+        
+        <button type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+    <div th:class="${cssmensaje}" th:text="${mensaje}"></div>
+</div>
+<div class="col-6 col-sm-7">
+            <h3></h3>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pelicula of lstProductos">
+                        <td>{{pelicula.idproducto}}</td>
+                        <td >{{pelicula.nombre}}</td>
+                        <td >{{pelicula.descripcion}}</td>
+                        <td >{{pelicula.precio}}</td>
+                        <td ><a (click)="buscarPelicula(pelicula.idproducto)"  class="btn btn-outline-primary">Editar</a></td>
+                        <td ><a (click)="eliminarPelicula(pelicula.idproducto)"  class="btn btn-outline-danger">Eliminar</a></td>
+                    
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.proyecto_daw2.cinemoon.Model.Pelicula;
 import com.proyecto_daw2.cinemoon.Model.Producto;
 import com.proyecto_daw2.cinemoon.Service.IProductoService;
+import com.proyecto_daw2.cinemoon.Service.ProductoService;
+
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
@@ -54,6 +57,23 @@ public class ProductoController {
     	
         return ResponseEntity.ok(salida) ;
 
+    }
+	
+    @DeleteMapping("/eliminar/{id}")
+    @ResponseBody
+    public ResponseEntity<?>  eliminarPelicula(@PathVariable("id") Integer id) {
+        String mensaje = "Pelicula eliminada correctamente";
+        HashMap<String, Object> salida = new HashMap<>();
+        boolean respuesta = true;
+        try {
+        	serviceProduc.deleteById(id);
+        	mensaje = "Se elimino correctamente";
+        } catch (Exception ex) {
+            mensaje = "Error al eliminar la película: " + ex.getMessage();
+            respuesta = false;
+        }
+        salida.put("mensaje", mensaje);
+        return ResponseEntity.ok(salida) ;
     }
 	
 }
