@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'peliculas', component: PeliculasListarUsuarioComponent},
   {path: 'CompraBoleto', component: BoletoCompraComponent},
-  {path: '', redirectTo: '/RegistroUsuario', pathMatch: 'full'}
+  {path: '', redirectTo: '/login', pathMatch: 'full'}
 
 ];
 
