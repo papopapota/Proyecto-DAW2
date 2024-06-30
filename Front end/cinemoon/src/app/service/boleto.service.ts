@@ -20,4 +20,8 @@ export class BoletoService {
     return this.http.post<any>(this.urlBase + "/comprarAction", body);
 
   }
+
+  public listar(): Observable<any>{
+    return this.http.get<any>(this.urlBase + "/misBoletos");
+  }
 }

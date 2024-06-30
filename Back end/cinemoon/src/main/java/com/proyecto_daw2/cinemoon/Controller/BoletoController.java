@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -23,11 +25,6 @@ import com.proyecto_daw2.cinemoon.Model.Funcion;
 import com.proyecto_daw2.cinemoon.Model.Sala;
 import com.proyecto_daw2.cinemoon.Model.Usuario;
 import com.proyecto_daw2.cinemoon.Repository.IDetalleBoletoRepository;
-import com.proyecto_daw2.cinemoon.Service.AsientoService;
-import com.proyecto_daw2.cinemoon.Service.BoletoService;
-import com.proyecto_daw2.cinemoon.Service.FuncionService;
-import com.proyecto_daw2.cinemoon.Service.IBoletoService;
-import com.proyecto_daw2.cinemoon.Service.PeliculaService;
 import com.proyecto_daw2.cinemoon.Utils.RespuestaMensaje;
 import com.proyecto_daw2.cinemoon.Utils.UtilCompraBoleto;
 import com.proyecto_daw2.cinemoon.Utils.UtilsCompraBoletoRequest;
@@ -234,5 +231,20 @@ public class BoletoController {
 
         return null;
     }
+
+    @GetMapping("/misBoletos")
+    public ResponseEntity<?> cargarListaBoletos2(HttpSession session) {
+    try {
+        Usuario usuario = (Usuario) session.getAttribute("usuario");
+        if (usuario == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Usuario no autenticado");
+        }
+        List<Boleto> lstBoletos = tikectService.listaBoletosByIdUsuario(usuario.getIdusuario());
+        return ResponseEntity.ok(lstBoletos);
+    } catch (Exception e) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al cargar la lista de boletos: " + e.getMessage());
+        }
+    }
+
     
 }

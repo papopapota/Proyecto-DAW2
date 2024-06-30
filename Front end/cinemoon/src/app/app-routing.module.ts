@@ -12,6 +12,7 @@ import { BoletosListaUsuarioComponent } from './boletos-lista-usuario/boletos-li
 import { FuncionesCrudAdminComponent } from './funciones-crud-admin/funciones-crud-admin.component';
 import { ProductoCrudAdminComponent } from './producto-crud-admin/producto-crud-admin.component';
 import { SalasCrudAdminComponent } from './salas-crud-admin/salas-crud-admin.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [ 
   {path: 'CompraBoleto', component: BoletoCompraComponent},
@@ -25,10 +26,10 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'peliculas', component: PeliculasListarUsuarioComponent},
   {path: 'CompraBoleto', component: BoletoCompraComponent},
-  {path: '', redirectTo: '/RegistroUsuario', pathMatch: 'full'},
   {path: 'mantenimientoFunciones', component: FuncionesCrudAdminComponent},
-  {path: 'mantenimientoSalas', component: SalasCrudAdminComponent}
-
+  {path: 'mantenimientoSalas', component: SalasCrudAdminComponent},
+  {path: 'navBar', component: NavbarComponent},
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
 
 ];
 
