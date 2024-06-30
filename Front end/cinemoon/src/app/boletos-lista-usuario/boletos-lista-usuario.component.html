@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -15,9 +16,9 @@
             <tbody>
             <tr *ngFor="let b of boletos">
                 <td>{{b.id_boleto}}</td>
-                <td>{{b.objFuncion.pelicula?.titulo}}</td>
-                <td>{{b.objFuncion.horaInicio}}</td>
-                <td>{{b.objFuncion.horaFin}}</td>
+                <td>{{b.funcion.pelicula?.titulo}}</td>
+                <td>{{b.funcion.horaInicio}}</td>
+                <td>{{b.funcion.horaFin}}</td>
                 <td>{{b.cantidad}}</td>
             </tr>
             </tbody>

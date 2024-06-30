@@ -35,10 +35,12 @@ export class PeliculasCrudAdminComponent {
 
   ngOnInit(): void {
     this.listarPeliculas();
-
     this.generoService.listar().subscribe(data =>{
       this.listaGeneros = data;
-    })
+      
+    });
+ 
+
   }
 
  /* ngAfterViewChecked(){
@@ -86,7 +88,13 @@ export class PeliculasCrudAdminComponent {
   listarPeliculas(){
     this.peliculaService.listar().subscribe(data =>{
       this.peliculas = data;
-    })
+      console.log(data);
+    },
+    error =>{
+      console.log("Error = " +  error);
+    });
+
+    console.log(this.peliculas);
   }
 
   eliminarPelicula(id:number){

@@ -10,18 +10,35 @@ import { Boleto } from '../model/boleto';
 })
 export class BoletosListaUsuarioComponent {
 
-  constructor(private boletoService: BoletoService, private router: Router) { }
-
+  public idusuario: number = 0;
   public boletos: Boleto[] = [];
+  constructor(private router: Router, private boletoServise: BoletoService) {}
 
   ngOnInit(): void {
-    this.listarBoletos();
-    console.log(this.boletos);
+    this.loadUserAndTickets();
   }
 
-  listarBoletos(){
-    this.boletoService.listar().subscribe(data =>{
-      this.boletos = data;
-    })
+  loadUserAndTickets(): void {
+    const userJson = sessionStorage.getItem('user');
+    if (userJson) {
+      const user = JSON.parse(userJson);
+      this.idusuario = user.idusuario;
+      console.log("Id del usuario:", this.idusuario);
+
+      this.boletoServise.getTicketsByUserId(user.idusuario).subscribe({
+        next: (boletos) => {
+          this.boletos = boletos;
+          console.log("Boletos del usuario:", this.boletos);
+        },
+        error: (err) => {
+          console.error("Error al obtener los boletos:", err);
+        }
+      });
+    } else {
+      console.log("No hay usuario logueado.");
+      this.router.navigate(['/login']);
+    }
   }
+
+  
 }
