@@ -20,6 +20,8 @@ import com.proyecto_daw2.cinemoon.Service.IUsuarioService;
 
 import jakarta.servlet.http.HttpSession;
 import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @AllArgsConstructor
@@ -77,6 +79,13 @@ public class UsuarioController {
     public ResponseEntity<?> obtenerUsuario(HttpSession session) {
         Usuario usuario = (Usuario) session.getAttribute("usuario");
         return ResponseEntity.ok(usuario);
+    }
+
+    @GetMapping("/obtenerTipoUsuario")
+    public int getMethodName(HttpSession session) {
+        int idtipoUsuario;
+        idtipoUsuario = ((Usuario) session.getAttribute("usuario")).getObjTipoUsuario().getIdtipousuario();
+        return idtipoUsuario;
     }
     
 }

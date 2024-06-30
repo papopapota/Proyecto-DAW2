@@ -8,7 +8,7 @@
 </head>
 <body>
 <header>
-<nav *ngIf="tipoUsuario === 2" class="navbar navbarAdmin navbar-expand-lg navbar-light custom-navbar">
+<nav *ngIf="idtipousuario === 2" class="navbar navbarAdmin navbar-expand-lg navbar-light custom-navbar">
         <div class="container justify-content-around">
           <div>
             <span class="fs-3 text-white poetsen-one-regular">Admin </span>
@@ -30,7 +30,7 @@
             <a class="nav-item nav-link text-white" routerLink="/ListaUsuarios">Usuario Lista</a>
             <a class="nav-item nav-link text-white" routerLink="/funcionLista">Funcion Lista</a>
             <!--  <a class="nav-item nav-link text-white"  href="#">Item 4</a>-->
-            <a class="nav-item nav-link text-white" routerLink="/logout">
+            <a class="nav-item nav-link text-white" routerLink="/login">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                     class="bi bi-box-arrow-left" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
@@ -43,7 +43,7 @@
           
         </div>
 </nav>
-<nav *ngIf="tipoUsuario === 1" class="navbar navbar-expand-lg navbar-light  custom-navbar">
+<nav *ngIf="idtipousuario === 1" class="navbar navbar-expand-lg navbar-light  custom-navbar">
     <div class="container justify-content-around">
         <a class="navbar-brand text-white customLogo" routerLink="/Index">CINE<span>MOON</span></a>
         
@@ -69,7 +69,7 @@
                     d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
             </svg>
         </a>
-        <a class="nav-item nav-link text-white" routerLink="/logout">
+        <a class="nav-item nav-link text-white" routerLink="/login">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                 class="bi bi-box-arrow-left" viewBox="0 0 16 16">
             <path fill-rule="evenodd"
