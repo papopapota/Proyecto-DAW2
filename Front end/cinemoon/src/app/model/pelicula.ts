@@ -11,5 +11,5 @@ export interface Pelicula {
     enestreno:boolean;
 
 
-    objGenero ?: Genero;
+    genero ?: Genero;
 }
