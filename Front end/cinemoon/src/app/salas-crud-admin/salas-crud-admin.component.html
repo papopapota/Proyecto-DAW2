@@ -1,1 +1,57 @@
-<p>salas-crud-admin works!</p>
+<app-navbar></app-navbar>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-6 col-sm-4">
+            <h1>Mantenimiento Salas</h1>
+            <div *ngIf="mensaje" class="alert alert-success" role="alert">
+                {{ mensaje }}
+              </div>
+            <form (ngSubmit)="registrarSala()">
+                <div class="form-group my-2">
+                    <label for="idSala">Código</label>
+                    <input type="text" class="form-control" id="idSala" name="idSala"
+                        [(ngModel)]="nuevaSala.idSala" placeholder="Código" readonly>
+                </div>
+                <div class="form-group col-md-12 my-2">
+                    <label for="descripcionSala">Descripcion</label>
+                    <input type="text" class="form-control" id="descripcionSala" name="descripcionSala" placeholder="Ingrese descripcion"
+                        [(ngModel)]="nuevaSala.descripcionSala">
+                </div>
+                <div class="form-group col-md-12 my-2">
+                    <label for="horaInicio">Precio</label>
+                    <input type="text" class="form-control" id="precio" name="precio" placeholder="00:00:00"
+                        [(ngModel)]="nuevaSala.precio">
+                </div>
+                <button type="submit" class="btn btn-primary my-3">Registrar</button>
+                <a (click)="(limpiarCampos())" class="btn btn-danger">Limpiar</a>
+
+            </form>
+        </div>
+
+        <div class="col-6 col-sm-7">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let objSala of salas">
+                        <th scope="row">{{objSala.idSala}}</th>
+                        <td>{{objSala.descripcionSala}}</td>
+                        <td>{{objSala.precio}}</td>
+                        <td ><a (click)="buscarSala(objSala.idSala)" class="btn btn-success">Editar</a>  | 
+                            <a (click)="eliminarSala(objSala.idSala)" class="btn btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+
+</div>

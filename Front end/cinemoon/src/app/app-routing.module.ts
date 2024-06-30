@@ -11,6 +11,7 @@ import { UsuariosDetalleAdminComponent } from './usuarios-detalle-admin/usuarios
 import { BoletosListaUsuarioComponent } from './boletos-lista-usuario/boletos-lista-usuario.component';
 import { FuncionesCrudAdminComponent } from './funciones-crud-admin/funciones-crud-admin.component';
 import { ProductoCrudAdminComponent } from './producto-crud-admin/producto-crud-admin.component';
+import { SalasCrudAdminComponent } from './salas-crud-admin/salas-crud-admin.component';
 
 const routes: Routes = [ 
   {path: 'CompraBoleto', component: BoletoCompraComponent},
@@ -25,7 +26,9 @@ const routes: Routes = [
   {path: 'peliculas', component: PeliculasListarUsuarioComponent},
   {path: 'CompraBoleto', component: BoletoCompraComponent},
   {path: '', redirectTo: '/RegistroUsuario', pathMatch: 'full'},
-  {path: 'mantenimientoFunciones', component: FuncionesCrudAdminComponent}
+  {path: 'mantenimientoFunciones', component: FuncionesCrudAdminComponent},
+  {path: 'mantenimientoSalas', component: SalasCrudAdminComponent}
+
 
 ];
 
