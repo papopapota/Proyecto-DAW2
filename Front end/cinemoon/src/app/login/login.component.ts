@@ -28,6 +28,7 @@ login() {
     if (data != null) {
       this.user = data;
       console.log(this.user);
+      sessionStorage.setItem('user', JSON.stringify(this.user));
       this.successMessage = 'Login correcto';
       if (this.user.id_tipo_usuario == 1) {
         this.router.navigate(['/peliculas']);
