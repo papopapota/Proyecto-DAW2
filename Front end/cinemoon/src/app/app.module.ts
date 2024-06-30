@@ -22,6 +22,7 @@ import { BoletosListaUsuarioComponent } from './boletos-lista-usuario/boletos-li
 import { FuncionesCrudAdminComponent } from './funciones-crud-admin/funciones-crud-admin.component';
 import { SalasCrudAdminComponent } from './salas-crud-admin/salas-crud-admin.component';
 import { ProductoCrudAdminComponent } from './producto-crud-admin/producto-crud-admin.component';
+import { DulceriaCompraComponent } from './dulceria-compra/dulceria-compra.component';
 
 
 
@@ -41,7 +42,8 @@ import { ProductoCrudAdminComponent } from './producto-crud-admin/producto-crud-
     BoletoCompraComponent,
     FuncionesCrudAdminComponent,
     SalasCrudAdminComponent,
-    ProductoCrudAdminComponent
+    ProductoCrudAdminComponent,
+    DulceriaCompraComponent
   ],
   imports: [
     BrowserModule,
