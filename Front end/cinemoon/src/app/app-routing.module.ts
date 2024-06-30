@@ -13,6 +13,7 @@ import { FuncionesCrudAdminComponent } from './funciones-crud-admin/funciones-cr
 import { ProductoCrudAdminComponent } from './producto-crud-admin/producto-crud-admin.component';
 import { SalasCrudAdminComponent } from './salas-crud-admin/salas-crud-admin.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { DulceriaCompraComponent } from './dulceria-compra/dulceria-compra.component';
 
 const routes: Routes = [ 
   {path: 'CompraBoleto', component: BoletoCompraComponent},
@@ -29,7 +30,9 @@ const routes: Routes = [
   {path: 'mantenimientoFunciones', component: FuncionesCrudAdminComponent},
   {path: 'mantenimientoSalas', component: SalasCrudAdminComponent},
   {path: 'navBar', component: NavbarComponent},
-  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path: 'dulceria', component: DulceriaCompraComponent},
+  {path: '', redirectTo: '/login', pathMatch: 'full'}
+
 
 ];
 

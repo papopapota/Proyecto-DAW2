@@ -69,7 +69,7 @@ export class SalasCrudAdminComponent {
       this.mensaje = "Funcion eliminada";
     },
     error =>{
-      console.error("Error al eliminar Funcion" + error);
+      console.error("Error al eliminar Salas" + error);
     }
   
   )
