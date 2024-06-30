@@ -12,10 +12,13 @@ export class NavbarComponent {
 constructor(private navbarService:NavbarService, private cdr: ChangeDetectorRef) { }
 ngOnInit(): void {
   this.obtenerUsuario();
+
+  let usuario: Usuario = this.navbarService.obtenerUsuario();
+  this.idtipousuario = usuario.id_tipo_usuario;
 }
-  idtipousuario: number = this.navbarService.obtenerUsuarioPorId();
+  idtipousuario: number = this.navbarService.obtenerUsuario();
   obtenerUsuario() {
-    this.navbarService.obtenerUsuario().subscribe((data: Usuario ) => {
+    /*this.navbarService.obtenerUsuario().subscribe((data: Usuario ) => {
       if (data != null) {
         this.idtipousuario = data.id_tipo_usuario;
         console.log(this.idtipousuario);
@@ -24,16 +27,21 @@ ngOnInit(): void {
     },
     (error: string) => {
       console.log("Error al obtener usuario" + error);
-    });
+    });*/
+      this.navbarService.loadIdtipousuario();
+      console.log(this.idtipousuario);
   }
   obtenerUsuarioPorId() {
-    this.navbarService.obtenerUsuarioPorId().subscribe((data: number ) => {
-      if (data != null) {
-        /**/ 
-      }
-    },
-    (error: string) => {
-      console.log("Error al obtener usuario" + error);
+    this.navbarService.idtipousuario.subscribe((data: number ) => {
+      this.idtipousuario = data;
     });
+    //his.navbarService.obtenerUsuarioPorId().subscribe((data: number ) => {
+    // if (data != null) {
+    //   /**/ 
+    // }
+    //,
+    //error: string) => {
+    // console.log("Error al obtener usuario" + error);
+    //);
   } 
 }
