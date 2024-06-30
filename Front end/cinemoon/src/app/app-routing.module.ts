@@ -26,11 +26,10 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'peliculas', component: PeliculasListarUsuarioComponent},
   {path: 'CompraBoleto', component: BoletoCompraComponent},
-  {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'mantenimientoFunciones', component: FuncionesCrudAdminComponent},
   {path: 'mantenimientoSalas', component: SalasCrudAdminComponent},
-  {path: 'navBar', component: NavbarComponent}
-
+  {path: 'navBar', component: NavbarComponent},
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
 
 ];
 

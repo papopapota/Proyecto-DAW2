@@ -37,6 +37,7 @@ login() {
     if (data != null) {
       this.user = data;
       console.log(this.user);
+      sessionStorage.setItem('user', JSON.stringify(this.user));
       this.successMessage = 'Login correcto';
     this.cookieService.setUserCookier(data);
 
