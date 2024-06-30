@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Usuario } from '../model/usuario';
 import { LoginService } from '../service/login.service';
 import { NavbarService } from '../service/navbar.service';
+import { CustomCookieService } from '../service/custom-cookie.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,10 @@ import { NavbarService } from '../service/navbar.service';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  constructor(private loginService:LoginService,private navbarService: NavbarService, private router: Router) { }
+  constructor(private loginService:LoginService,
+    private navbarService: NavbarService, 
+    private router: Router,
+    private cookieService : CustomCookieService) { }
   username: string = '';
   password: string = '';
   successMessage: string = '';
@@ -34,6 +38,8 @@ login() {
       this.user = data;
       console.log(this.user);
       this.successMessage = 'Login correcto';
+    this.cookieService.setUserCookier(data);
+
         this.router.navigate(['/peliculas']);
     } else {
       this.failMessage = 'Login incorrecto';

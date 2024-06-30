@@ -63,7 +63,7 @@ public class LoginController {
         @PostMapping("/loguear/{correo}/{clave}")
         public ResponseEntity<?> loguearUsuario(@PathVariable("correo") String correo,@PathVariable("clave") String clave, HttpSession session, RedirectAttributes redirectAttributes) {
         Usuario user;
-        
+        System.out.println("correo :" + correo  + " Clave: " + clave);
         try{
                 
             user = usuarioService.authenticate(correo, clave);
