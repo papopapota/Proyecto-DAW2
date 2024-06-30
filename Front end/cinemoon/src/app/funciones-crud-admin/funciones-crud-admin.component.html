@@ -1,0 +1,84 @@
+<app-navbar></app-navbar>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-6 col-sm-4">
+            <h1>Mantenimiento Funciones</h1>
+            <div *ngIf="mensaje" class="alert alert-success" role="alert">
+                {{ mensaje }}
+              </div>
+            <form (ngSubmit)="registrarFunciones()">
+                <div class="form-group my-2">
+                    <label for="idFuncion">Código</label>
+                    <input type="text" class="form-control" id="idFuncion" name="idFuncion"
+                        [(ngModel)]="nuevafuncion.idFuncion" placeholder="Código" readonly>
+                </div>
+                <div class="form-group my-2">
+                    <label for="idPelicula">Pelicula</label>
+                    <select id="idPelicula" name="idPelicula" class="form-control" [(ngModel)]="nuevafuncion.idPelicula">
+                        <option selected value="0">Seleccione...</option>
+                        <option *ngFor="let objPeli of peliculas" [value]="objPeli.idpelicula">{{ objPeli.titulo }}
+                        </option>
+                    </select>
+
+                </div>
+                <div class="form-group my-2">
+                    <label for="idSala">Salas</label>
+                    <select id="idSala" name="idSala" class="form-control" [(ngModel)]="nuevafuncion.idSala">
+                        <option selected value="0">Seleccione...</option>
+                        <option *ngFor="let objSala of salas" [value]="objSala.idSala">{{ objSala.descripcionSala }}
+                        </option>
+                    </select>
+
+                </div>
+                <div class="form-group col-md-12 my-2">
+                    <label for="fechaFuncion">Fecha</label>
+                    <input type="date" class="form-control" id="fechaFuncion" name="fechaFuncion" placeholder="Fecha"
+                        [(ngModel)]="nuevafuncion.fechaFuncion">
+                </div>
+                <div class="form-group col-md-12 my-2">
+                    <label for="horaInicio">Hora Inicio</label>
+                    <input type="text" class="form-control" id="horaInicio" name="horaInicio" placeholder="00:00:00"
+                        [(ngModel)]="nuevafuncion.horaInicio">
+                </div>
+                <div class="form-group my-2">
+                    <label for="horaFin">Hora Fin</label>
+                    <input type="text" class="form-control" id="horaFin" name="horaFin" placeholder="00:00:00"
+                        [(ngModel)]="nuevafuncion.horaFin">
+                </div>
+                <button type="submit" class="btn btn-primary my-3">Registrar</button>
+                <a (click)="(limpiarCampos())" class="btn btn-danger">Limpiar</a>
+            </form>
+        </div>
+
+        <div class="col-6 col-sm-7">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Pelicula</th>
+                        <th scope="col">Sala</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Hora Inicio</th>
+                        <th scope="col">Hora Fin</th>
+                        <th scope="col">Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let objFun of funciones">
+                        <th scope="row">{{objFun.idFuncion}}</th>
+                        <td>{{objFun.pelicula?.titulo}}</td>
+                        <td>{{objFun.sala?.descripcionSala}}</td>
+                        <td>{{objFun.fechaFuncion}}</td>
+                        <td>{{objFun.horaInicio}}</td>
+                        <td>{{objFun.horaFin}}</td>
+                        <td ><a (click)="buscarFunciones(objFun.idFuncion)" class="btn btn-success">Editar</a></td>
+                        <td ><a (click)="eliminarFunciones(objFun.idFuncion)" class="btn btn-danger">Eliminar</a></td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+
+</div>

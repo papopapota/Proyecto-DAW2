@@ -19,6 +19,10 @@ import { UsuariosRegistroUsuarioComponent } from './usuarios-registro-usuario/us
 import { UsuariosActualizarUsuarioComponent } from './usuarios-actualizar-usuario/usuarios-actualizar-usuario.component';
 import { UsuariosDetalleAdminComponent } from './usuarios-detalle-admin/usuarios-detalle-admin.component';
 import { BoletosListaUsuarioComponent } from './boletos-lista-usuario/boletos-lista-usuario.component';
+import { FuncionesCrudAdminComponent } from './funciones-crud-admin/funciones-crud-admin.component';
+import { SalasCrudAdminComponent } from './salas-crud-admin/salas-crud-admin.component';
+import { ProductoCrudAdminComponent } from './producto-crud-admin/producto-crud-admin.component';
+
 
 
 @NgModule({
@@ -34,8 +38,10 @@ import { BoletosListaUsuarioComponent } from './boletos-lista-usuario/boletos-li
     PeliculasListarUsuarioComponent,
     NavbarComponent,
     CarruselComponent,
-    BoletoCompraComponent
-
+    BoletoCompraComponent,
+    FuncionesCrudAdminComponent,
+    SalasCrudAdminComponent,
+    ProductoCrudAdminComponent
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,9 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { Pelicula } from '../model/pelicula';
 import { PeliculaService } from '../service/pelicula.service';
 import { Router } from '@angular/router';
 import { Genero } from '../model/genero';
 import { GeneroService } from '../service/genero.service';
-
 @Component({
   selector: 'app-peliculas-crud-admin',
   templateUrl: './peliculas-crud-admin.component.html',
@@ -15,8 +14,10 @@ export class PeliculasCrudAdminComponent {
 
   constructor(private peliculaService:PeliculaService,
     private router: Router,
-    private generoService: GeneroService
+    private generoService: GeneroService,
+    private cdRef : ChangeDetectorRef
   ) { }
+  mensaje = "";
 
   public peliculas: Pelicula[] = [];
   public listaGeneros:Genero[] = [];
@@ -60,8 +61,14 @@ export class PeliculasCrudAdminComponent {
         idioma: "",
         enestreno: true
       };
-      this.router.navigate(['']);
+      this.router.navigate(['peliculasCRUD']);
       this.listarPeliculas();
+      this.mensaje = "Pelicula registrada con exito";
+
+      setTimeout(() => {
+        this.mensaje = ""; 
+      }, 3000); 
+  
     },
     error =>{
       console.log("Error al registrar la pelicula: " +error);
@@ -72,6 +79,7 @@ export class PeliculasCrudAdminComponent {
   buscarPelicula(id:number){
     this.peliculaService.buscar(id).subscribe(data =>{
       this.newPelicula = data;
+      this.cdRef.detectChanges();
     })
   }
 
@@ -85,6 +93,8 @@ export class PeliculasCrudAdminComponent {
     this.peliculaService.eliminar(id).subscribe(Response =>{
       console.log("Pelicula eliminada " + Response);
       this.listarPeliculas();
+      this.router.navigate(['peliculasCRUD']);
+      this.mensaje = "Pelicula Eliminada con exito";
 
     },
     error=>{

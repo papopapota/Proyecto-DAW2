@@ -9,7 +9,9 @@ import lombok.Data;
 public class Sala {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_sala")
     private int idSala ;
+    @Column(name = "descripcion_sala")
     private String descripcionSala ;
     private double precio ;
 }

@@ -1,14 +1,16 @@
 import { Time } from "@angular/common";
 import { Pelicula } from "./pelicula";
+import { Sala } from "./sala";
 
 export interface Funcion {
     idFuncion:number;
     idPelicula:number;
     idSala:number;
-    fechaFuncion:Date;
-    horaInicio:Time;
-    horaFin:Time;
-    fechaFuncionFormateada:string;
+    fechaFuncion: string;
+    horaInicio: string;
+    horaFin:string;
+    fechaFuncionFormateada ?:string;
 
-    objPelicula: Pelicula;
+    sala ? : Sala;
+    pelicula?: Pelicula;
 }

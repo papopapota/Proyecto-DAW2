@@ -62,8 +62,9 @@ public class PeliculaController {
     }
     @DeleteMapping("/eliminar/{id}")
     @ResponseBody
-    public String eliminarPelicula(@PathVariable("id") Integer id) {
+    public ResponseEntity<?>  eliminarPelicula(@PathVariable("id") Integer id) {
         String mensaje = "Pelicula eliminada correctamente";
+        HashMap<String, Object> salida = new HashMap<>();
         boolean respuesta = true;
         try {
         	peliculaService.eliminarPelicula(id);
@@ -72,8 +73,8 @@ public class PeliculaController {
             mensaje = "Error al eliminar la película: " + ex.getMessage();
             respuesta = false;
         }
-        
-        return mensaje ;
+        salida.put("mensaje", mensaje);
+        return ResponseEntity.ok(salida) ;
     }
 
 }

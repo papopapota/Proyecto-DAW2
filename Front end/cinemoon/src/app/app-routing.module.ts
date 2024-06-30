@@ -9,6 +9,11 @@ import { UsuariosRegistroUsuarioComponent } from './usuarios-registro-usuario/us
 import { UsuariosActualizarUsuarioComponent } from './usuarios-actualizar-usuario/usuarios-actualizar-usuario.component';
 import { UsuariosDetalleAdminComponent } from './usuarios-detalle-admin/usuarios-detalle-admin.component';
 import { BoletosListaUsuarioComponent } from './boletos-lista-usuario/boletos-lista-usuario.component';
+import { FuncionesCrudAdminComponent } from './funciones-crud-admin/funciones-crud-admin.component';
+import { ProductoCrudAdminComponent } from './producto-crud-admin/producto-crud-admin.component';
+import { SalasCrudAdminComponent } from './salas-crud-admin/salas-crud-admin.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
 const routes: Routes = [ 
   {path: 'CompraBoleto', component: BoletoCompraComponent},
   {path: 'ListaUsuarios', component: UsuariosListaAdminComponent},
@@ -17,10 +22,14 @@ const routes: Routes = [
   {path: 'DetalleUsuario/:idusuario', component: UsuariosDetalleAdminComponent},
   {path: 'ListaBoletos', component: BoletosListaUsuarioComponent},
   {path: 'peliculasCRUD', component: PeliculasCrudAdminComponent},
+  {path: 'productosCRUD', component: ProductoCrudAdminComponent},
   {path: 'login', component: LoginComponent},
   {path: 'peliculas', component: PeliculasListarUsuarioComponent},
   {path: 'CompraBoleto', component: BoletoCompraComponent},
-  {path: '', redirectTo: '/login', pathMatch: 'full'}
+  {path: 'mantenimientoFunciones', component: FuncionesCrudAdminComponent},
+  {path: 'mantenimientoSalas', component: SalasCrudAdminComponent},
+  {path: 'navBar', component: NavbarComponent},
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
 
 ];
 

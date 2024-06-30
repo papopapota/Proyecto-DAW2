@@ -37,8 +37,7 @@ public class SalaService implements  ISalaService {
 
 	@Override
 	public void deleteById(Integer id) {
-		// TODO Auto-generated method stub
-		
+		salaRepository.deleteById(id);
 	}
 	
 }
