@@ -31,7 +31,7 @@ export class PeliculasListarUsuarioComponent {
   ngOnInit(): void {
     this.listarPeliculas();
     this.obtenerUsuario();
-    this.navbarService.obtenerUsuario();
+    //this.navbarService.obtenerUsuario();
   }
   listarPeliculas(){
     this.peliculaService.listar().subscribe(data =>{
@@ -39,15 +39,6 @@ export class PeliculasListarUsuarioComponent {
     })
   }
   obtenerUsuario() {
-    this.navbarService.obtenerUsuario().subscribe((data: Usuario ) => {
-      if (data != null) {
-        this.user = data;
-        console.log(this.user);
-        console.log(this.user.id_tipo_usuario);
-      }
-    },
-    (error: string) => {
-      console.log("Error al obtener usuario" + error);
-    });
+    this.navbarService.loadIdtipousuario();
   }
 }

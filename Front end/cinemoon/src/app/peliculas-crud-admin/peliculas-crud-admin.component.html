@@ -3,7 +3,9 @@
     <div class="row">
             <div class="col-6 col-sm-4">
     <h1>Mantenimiento de Peliculas</h1>
-
+    <button onclick="listarPeliculas()" class=" btn btn-warning">
+        Listar peliculas consola
+    </button>
     <div *ngIf="mensaje" class="alert alert-success" role="alert">
         {{ mensaje }}
       </div>
@@ -82,7 +84,7 @@
                         <td >{{pelicula.titulo}}</td>
                         <td >{{pelicula.descripcion}}</td>
                         <td >{{pelicula.imagen}}</td>
-                        <td >{{pelicula.objGenero?.nom_genero}}</td>
+                        <td >{{pelicula.genero?.nom_genero}}</td>
                         <td >{{pelicula.duracion}}</td>
                         <td >{{pelicula.idioma}}</td>
                         <td >                
