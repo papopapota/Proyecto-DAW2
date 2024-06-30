@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Boleto } from '../model/boleto';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ export class BoletoService {
 
   }
 
-  public listar(): Observable<any>{
-    return this.http.get<any>(this.urlBase + "/misBoletos");
+  public getTicketsByUserId(idusuario: number): Observable<Boleto[]> {
+    return this.http.get<Boleto[]>(this.urlBase + "/lista/" + idusuario);
   }
 }
