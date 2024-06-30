@@ -16,4 +16,18 @@ export class SalaService {
     public listar(): Observable<Sala[]>{
       return this.http.get<Sala[]>(this.urlBase + "/lista");
     }
+
+    public buscar(id : number): Observable<Sala>{
+      return this.http.get<Sala>(this.urlBase + "/buscar/" + id);
+    } 
+
+    public registrar(sala : Sala): Observable<any>{
+      return this.http.post<Sala>(this.urlBase + "/guardar", sala);
+    }
+
+    public eliminar(id:number): Observable<any>{
+      return this.http.delete<any>(this.urlBase + "/eliminar/" + id);
+    }
+  
+  
 }

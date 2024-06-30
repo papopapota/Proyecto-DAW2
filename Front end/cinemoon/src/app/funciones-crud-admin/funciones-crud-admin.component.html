@@ -3,6 +3,9 @@
     <div class="row">
         <div class="col-6 col-sm-4">
             <h1>Mantenimiento Funciones</h1>
+            <div *ngIf="mensaje" class="alert alert-success" role="alert">
+                {{ mensaje }}
+              </div>
             <form (ngSubmit)="registrarFunciones()">
                 <div class="form-group my-2">
                     <label for="idFuncion">Código</label>
@@ -43,8 +46,8 @@
                         [(ngModel)]="nuevafuncion.horaFin">
                 </div>
                 <button type="submit" class="btn btn-primary my-3">Registrar</button>
+                <a (click)="(limpiarCampos())" class="btn btn-danger">Limpiar</a>
             </form>
-            <!--div th:class="${cssmensaje}" th:text="${mensaje}"></div-->
         </div>
 
         <div class="col-6 col-sm-7">

@@ -60,18 +60,18 @@ public class SalaController {
 	
 	@DeleteMapping("/eliminar/{id}")
     @ResponseBody
-    public String eliminarSala(@PathVariable("id") Integer id) {
+    public ResponseEntity<?>  eliminarSala(@PathVariable("id") Integer id) {
         String mensaje = "Sala eliminada correctamente";
-        boolean respuesta = true;
+        HashMap<String, Object> salida = new HashMap<>();
         try {
         	serviceSala.deleteById(id);
         	mensaje = "Se elimino correctamente";
         } catch (Exception ex) {
             mensaje = "Error al eliminar la sala: " + ex.getMessage();
-            respuesta = false;
         }
-        
-        return mensaje ;
+        salida.put("mensaje", mensaje);
+        return ResponseEntity.ok(salida) ;
     }
+	
 	
 }

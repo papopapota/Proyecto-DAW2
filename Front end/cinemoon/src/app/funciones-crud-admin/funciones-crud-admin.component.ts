@@ -15,11 +15,12 @@ import { Router } from '@angular/router';
 export class FuncionesCrudAdminComponent {
 
   //Constructor der servicios
-  constructor(private funcionesService: FuncionesService, 
-              private peliculaService : PeliculaService,
-              private salaService : SalaService,
-              private router : Router) { }
+  constructor(private funcionesService: FuncionesService,
+    private peliculaService: PeliculaService,
+    private salaService: SalaService,
+    private router: Router) { }
 
+  mensaje = "";
   //Objeto vacio para almacenar registro
   nuevafuncion: Funcion = {
     idFuncion: 0,
@@ -32,15 +33,14 @@ export class FuncionesCrudAdminComponent {
 
   //Objeto de Listado
   funciones: Funcion[] = [];
-  salas : Sala[] = [];
-  peliculas : Pelicula[] = [];
+  salas: Sala[] = [];
+  peliculas: Pelicula[] = [];
 
 
   //Eventos
   ngOnInit(): void {
-    this.funcionesService.listar().subscribe(data => {
-      this.funciones = data
-    });
+
+    this.listarFunciones();
 
     this.salaService.listar().subscribe(data => {
       this.salas = data
@@ -51,43 +51,53 @@ export class FuncionesCrudAdminComponent {
     });
   }
 
-  buscarFunciones(id:number){
-    this.funcionesService.buscar(id).subscribe(data =>{
+  listarFunciones() {
+    this.funcionesService.listar().subscribe(data => {
+      this.funciones = data
+    });
+  }
+
+  buscarFunciones(id: number) {
+    this.funcionesService.buscar(id).subscribe(data => {
       this.nuevafuncion = data;
     })
   }
 
-  eliminarFunciones(id:number){
-    this.funcionesService.eliminar(id).subscribe(Response =>{
-      console.log("Funcion eliminada " + Response);
-      //this.router.navigate(["/mantenimientoFunciones"]);
-    },
-    error=>{
-      console.error("Error al eliminar la Funcion: " + error);
-    }
+  eliminarFunciones(id: number) {
+    this.funcionesService.eliminar(id).subscribe(Response => {
+        console.log("Funcion eliminada " + Response);
+        this.listarFunciones();
+        this.router.navigate(['mantenimientoFunciones']);
+        this.mensaje = "Funcion Eliminada con exito";
+      },
+      error => {
+        console.error("Error al eliminar la Funcion: " + error);
+      }
     )
   }
 
-  registrarFunciones(){
-    console.log(this.nuevafuncion);
+  registrarFunciones() {
     this.funcionesService.registrar(this.nuevafuncion).subscribe(
       //respuesta al registrar
       Response => {
         console.log("Funcion registrada " + Response);
         this.nuevafuncion = {
           //Limpiar campos
-          "idFuncion": 0,
-          "idPelicula": 0,
-          "idSala": 0,
-          "fechaFuncion": "",
-          "horaInicio": "",
-          "horaFin": "",
-          "fechaFuncionFormateada": "",
-          "sala": {idSala: 0, descripcionSala: '', precio: 0},
-          "pelicula": {idpelicula: 0,titulo:'', descripcion:'',  imagen:'', idGenero: 0, duracion:   '',idioma:   '', enestreno: true}
+          idFuncion: 0,
+          idPelicula: 0,
+          idSala: 0,
+          fechaFuncion: "",
+          horaInicio: "",
+          horaFin: ""
         }
         //
-        this.router.navigate([this.ngOnInit()]);
+        this.router.navigate(['mantenimientoFunciones']);
+        this.listarFunciones();
+        this.mensaje = "Funcion registrada con exito";
+        console.log(this.mensaje);
+        setTimeout(() => {
+          this.mensaje = ""; 
+        }, 3000); 
       },
       //en caso de error
       error => {
@@ -97,4 +107,17 @@ export class FuncionesCrudAdminComponent {
     )
   }
 
+  limpiarCampos(){
+    this.nuevafuncion ={
+     //Limpiar campos
+     idFuncion: 0,
+     idPelicula: 0,
+     idSala: 0,
+     fechaFuncion: "",
+     horaInicio: "",
+     horaFin: ""
+    }
+    this.listarFunciones;
+    this.router.navigate(['mantenimientoFunciones']);
+  }
 }
