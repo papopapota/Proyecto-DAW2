@@ -8,6 +8,6 @@ export interface Boleto {
     cantidad: number;
     Total: number;
 
-    objFuncion: Funcion;
+    funcion: Funcion;
     objUsuario: Usuario;
 }
