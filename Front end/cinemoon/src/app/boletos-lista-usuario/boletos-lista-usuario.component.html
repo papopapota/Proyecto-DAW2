@@ -5,22 +5,20 @@
         <table class="table table-hover">
             <thead>
             <tr>
-                <th>Codigo</th>
-                <th>Funcion</th>
-                <th>Apellido</th>
-                <th>Asiento</th>
+                <th>Boleto</th>
+                <th>Pelicula</th>
+                <th>Inicio</th>
+                <th>Fin</th>
                 <th>Cantidad</th>
-                <th>Total</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>dad</td>
-                <td>dad</td>
-                <td>dad</td>
-                <td>dad</td>
-                <td>dad</td>
-                <td>dad</td>
+            <tr *ngFor="let b of boletos">
+                <td>{{b.id_boleto}}</td>
+                <td>{{b.objFuncion.objPelicula.titulo}}</td>
+                <td>{{b.objFuncion.horaInicio}}</td>
+                <td>{{b.objFuncion.horaFin}}</td>
+                <td>{{b.cantidad}}</td>
             </tr>
             </tbody>
         </table>

@@ -27,4 +27,12 @@ export class UsuarioService {
   public eliminar(id: number): Observable<any>{
     return this.http.delete<any>(this.urlBase + "/eliminar/" + id);
   }
+
+  public obtenerUsuario(): Observable<Usuario>{
+    return this.http.get<Usuario>(this.urlBase + "/obtenerUsuario");
+  }
+
+  public updateUsuario(usuario: Usuario): Observable<Usuario>{
+    return this.http.put<Usuario>(this.urlBase + "/actualizar", usuario);
+  }
 }
