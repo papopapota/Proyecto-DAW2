@@ -21,6 +21,7 @@ export class UsuariosListaAdminComponent {
   listarUsuarios(){
     this.usuarioService.listar().subscribe(data =>{
       this.usuarios = data;
+      console.log(this.usuarios);
     })
   }
 

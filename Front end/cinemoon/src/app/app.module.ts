@@ -24,6 +24,7 @@ import { SalasCrudAdminComponent } from './salas-crud-admin/salas-crud-admin.com
 import { ProductoCrudAdminComponent } from './producto-crud-admin/producto-crud-admin.component';
 import { DulceriaCompraComponent } from './dulceria-compra/dulceria-compra.component';
 import { DetalleDulceriaCompraComponent } from './detalle-dulceria-compra/detalle-dulceria-compra.component';
+import { PeliculaDetalleComponent } from './pelicula-detalle/pelicula-detalle.component';
 
 
 
@@ -45,7 +46,8 @@ import { DetalleDulceriaCompraComponent } from './detalle-dulceria-compra/detall
     SalasCrudAdminComponent,
     ProductoCrudAdminComponent,
     DulceriaCompraComponent,
-    DetalleDulceriaCompraComponent
+    DetalleDulceriaCompraComponent,
+    PeliculaDetalleComponent
   ],
   imports: [
     BrowserModule,
