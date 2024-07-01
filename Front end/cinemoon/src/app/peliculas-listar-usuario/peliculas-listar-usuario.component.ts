@@ -23,7 +23,7 @@ export class PeliculasListarUsuarioComponent {
   id_tipo_usuario: 2,
   objTipoUsuario: {
     id_tipo_usuario: 1,
-    descripcion_tipo_usuario: "Cliente"
+    descripciontipousuario: "Cliente"
   }
 };
 
