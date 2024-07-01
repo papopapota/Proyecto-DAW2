@@ -14,6 +14,7 @@ import { ProductoCrudAdminComponent } from './producto-crud-admin/producto-crud-
 import { SalasCrudAdminComponent } from './salas-crud-admin/salas-crud-admin.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DulceriaCompraComponent } from './dulceria-compra/dulceria-compra.component';
+import { PeliculaDetalleComponent } from './pelicula-detalle/pelicula-detalle.component';
 
 const routes: Routes = [ 
   {path: 'CompraBoleto', component: BoletoCompraComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'RegistroUsuario', component: UsuariosRegistroUsuarioComponent},
   {path: 'ActualizarUsuario', component: UsuariosActualizarUsuarioComponent},
   {path: 'DetalleUsuario/:idusuario', component: UsuariosDetalleAdminComponent},
+  {path: 'DetallePelicula/:idpelicula', component: PeliculaDetalleComponent},
   {path: 'ListaBoletos', component: BoletosListaUsuarioComponent},
   {path: 'peliculasCRUD', component: PeliculasCrudAdminComponent},
   {path: 'productosCRUD', component: ProductoCrudAdminComponent},

@@ -35,7 +35,7 @@
                             <input type="password" class="form-control form-control-lg mb-4"
                                 placeholder="Contraseña" aria-label="Password" for="clave" id="clave" name="clave" [(ngModel)]="usuario.clave" disabled>
                             <input type="text" class="form-control form-control-lg mb-4"
-                                placeholder="Tipo" aria-label="Type" for="objTipoUsuario" id="objTipoUsuario" name="objTipoUsuario" [(ngModel)]="usuario.objTipoUsuario" disabled>
+                                placeholder="Tipo" aria-label="Type" for="objTipoUsuario" id="objTipoUsuario" name="objTipoUsuario" [(ngModel)]="descripciontipousuario" (ngModelChange)="updateDescripcion()" disabled>
                         </div>
                     </form>
                 </div>

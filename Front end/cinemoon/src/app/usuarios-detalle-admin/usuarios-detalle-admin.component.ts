@@ -10,6 +10,8 @@ import { Usuario } from '../model/usuario';
 })
 export class UsuariosDetalleAdminComponent {
 
+  public descripciontipousuario: any;
+
   constructor(private usuarioService: UsuarioService, private router: Router,
     private route: ActivatedRoute) { }
 
@@ -23,12 +25,15 @@ export class UsuariosDetalleAdminComponent {
     id_tipo_usuario: 1,
     objTipoUsuario: {
       id_tipo_usuario: 1,
-      descripcion_tipo_usuario: "Cliente"
+      descripciontipousuario: "Cliente"
     }
   };
 
   ngOnInit() {
     this.obtenerUsuario();
+    if (this.usuario.objTipoUsuario) {
+      this.descripciontipousuario = this.usuario.objTipoUsuario.descripciontipousuario;
+    };
   }
 
   obtenerUsuario() {
@@ -38,6 +43,12 @@ export class UsuariosDetalleAdminComponent {
       error => { console.error("Error al obtener usuario", error);
       }
     );
+  }
+
+  updateDescripcion() {
+    if (this.usuario.objTipoUsuario) {
+      this.usuario.objTipoUsuario.descripciontipousuario = this.descripciontipousuario;
+    }
   }
 
 }
