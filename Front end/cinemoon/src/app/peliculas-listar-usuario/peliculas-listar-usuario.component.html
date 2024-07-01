@@ -13,10 +13,10 @@
     <div class="row">
       <div *ngFor="let pelicula of peliculas" class="col-4 mt-3" id="peliculasContainer">
         <div class="pelicula mb-3">
-          <a [routerLink]="['/detalles', pelicula.idpelicula]">
+          <a (click)="detallePelicula(pelicula.idpelicula)">
             <img [src]="'../../assets/img/' + pelicula.idpelicula + '.jpg'" alt="img">
           </a>
-          <div class="contenido">
+            <div class="contenido">
             <h2>{{ pelicula.titulo }}</h2>
             <p class="genero">{{ pelicula.genero?.nom_genero}}</p>
             <p>{{ pelicula.duracion }}</p>

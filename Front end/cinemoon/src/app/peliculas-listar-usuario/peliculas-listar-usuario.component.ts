@@ -3,6 +3,7 @@ import { PeliculaService } from '../service/pelicula.service';
 import { Pelicula } from '../model/pelicula';
 import { NavbarService } from '../service/navbar.service';
 import { Usuario } from '../model/usuario';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-peliculas-listar-usuario',
@@ -11,7 +12,7 @@ import { Usuario } from '../model/usuario';
 })
 export class PeliculasListarUsuarioComponent {
 
-  constructor(private peliculaService:PeliculaService, private navbarService: NavbarService
+  constructor(private peliculaService:PeliculaService, private navbarService: NavbarService, private router: Router
 ) { }
   public user: Usuario = {
   idusuario: 0,
@@ -40,5 +41,8 @@ export class PeliculasListarUsuarioComponent {
   }
   obtenerUsuario() {
     this.navbarService.loadIdtipousuario();
+  }
+  detallePelicula(idpelicula: number) {
+    this.router.navigate(['/DetallePelicula', idpelicula]);
   }
 }
