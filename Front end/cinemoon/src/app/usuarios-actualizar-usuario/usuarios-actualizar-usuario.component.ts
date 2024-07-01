@@ -43,6 +43,7 @@ export class UsuariosActualizarUsuarioComponent {
         next: (updatedUser) => {
           sessionStorage.setItem('user', JSON.stringify(updatedUser));
           console.log("Usuario modificado:", updatedUser);
+          this.router.navigate(['/peliculas']);
         },
         error: (err) => {
           console.error("Error al actualizar el usuario:", err);

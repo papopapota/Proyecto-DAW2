@@ -20,7 +20,9 @@
             <h2>{{ pelicula.titulo }}</h2>
             <p class="genero">{{ pelicula.genero?.nom_genero}}</p>
             <p>{{ pelicula.duracion }}</p>
-            <a [routerLink]="['/compraTikects', pelicula.idpelicula]" class="boton-compra">Comprar</a>
+            <!--a [routerLink]="['/CompraBoleto', pelicula.idpelicula]" class="boton-compra">Comprar</a-->
+            <a [routerLink]="['/CompraBoleto']" class="boton-compra">Comprar</a>
+
           </div>
         </div>
       </div>

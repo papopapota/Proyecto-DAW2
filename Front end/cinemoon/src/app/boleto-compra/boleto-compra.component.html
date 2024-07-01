@@ -1,15 +1,9 @@
-
+<app-navbar></app-navbar>
 
 <body class="colorFondo">
-    <nav th:replace="layout::menu"></nav>
     <main class="container  ">
     
-        <div th:if="${failMessage}" class="alert alert-warning" role="alert">
-            <strong th:text="${failMessage}"></strong>
-        </div>
-        <div class="mt-5"></div>
-    
-        <div class=" bg-light d-flex justify-content-center mt-5 ">
+        <div class=" bg-light d-flex justify-content-center ">
             <form (ngSubmit)="comprarBoleto()" th:action="@{/comprarAction}" class="d-flex justify-content-evenly mt-5 col-12 py-5" action="" method="post">
                 <div class="col-sm-4 ">
                     <h2 class="fw-bolder poetsen-one-regular">COMPRA TIKECT</h2>

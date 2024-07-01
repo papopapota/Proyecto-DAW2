@@ -39,7 +39,7 @@ export class UsuariosRegistroUsuarioComponent {
           clave: "",
           id_tipo_usuario: 1,
           };
-        this.router.navigate(['/ListaUsuarios']);
+        this.router.navigate(['/login']);
           },
           error => {
             console.log('Error al registrar usuario', error);

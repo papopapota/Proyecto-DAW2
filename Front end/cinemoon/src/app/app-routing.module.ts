@@ -17,7 +17,6 @@ import { DulceriaCompraComponent } from './dulceria-compra/dulceria-compra.compo
 import { PeliculaDetalleComponent } from './pelicula-detalle/pelicula-detalle.component';
 
 const routes: Routes = [ 
-  {path: 'CompraBoleto', component: BoletoCompraComponent},
   {path: 'ListaUsuarios', component: UsuariosListaAdminComponent},
   {path: 'RegistroUsuario', component: UsuariosRegistroUsuarioComponent},
   {path: 'ActualizarUsuario', component: UsuariosActualizarUsuarioComponent},
