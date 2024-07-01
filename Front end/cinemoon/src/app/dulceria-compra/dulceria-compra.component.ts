@@ -83,5 +83,14 @@ export class DulceriaCompraComponent {
     totalGeneralElement.textContent = totalGeneral.toFixed(2);
   }
 
+  limpiarDetalle() {
+    const tbody = this.el.nativeElement.querySelector('#detalleTable tbody');
+    while (tbody.firstChild) {
+      tbody.removeChild(tbody.firstChild);
+    }
+    const totalGeneralElement = this.el.nativeElement.querySelector('#totalGeneral');
+    totalGeneralElement.innerText = '0.00';
+  }
+
 }
 
