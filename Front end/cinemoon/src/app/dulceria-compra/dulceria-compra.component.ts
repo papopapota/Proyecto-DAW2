@@ -92,5 +92,9 @@ export class DulceriaCompraComponent {
     totalGeneralElement.innerText = '0.00';
   }
 
+  redirigir(){
+    this.router.navigate(['/ListaBoletos']);
+  }
+
 }
 

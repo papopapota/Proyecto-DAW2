@@ -107,7 +107,8 @@ public class BoletoController {
             Asiento asiento = new Asiento();
             for (int i = 0; i < ListIdAsientos.size(); i++) {
                 asiento = new Asiento();
-                asiento.setFuncion(funcion);
+                //asiento.setFuncion(funcion);
+                asiento.setIdFuncion(funcion.getIdFuncion());
                 asiento.setCodigo(ListIdAsientos.get(i));
                 asiento.setEstadoAsiento(false);
                 try {

@@ -5,6 +5,7 @@ import { AppModule } from '../app.module';
 import { BoletoService } from '../service/boleto.service';
 import { UtilCompraBoleto } from '../model/util-compra-boleto';
 import { Funcion } from '../model/funcion';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,9 @@ import { Funcion } from '../model/funcion';
 })
 export class BoletoCompraComponent {
 
-  constructor(private asientoService: AsientoService , private boletoService : BoletoService) {}
+  constructor(private asientoService: AsientoService ,
+     private boletoService : BoletoService,
+    private route : Router) {}
 
   public lstAsiento: Asiento[] = [];
 
@@ -104,5 +107,6 @@ export class BoletoCompraComponent {
       
       console.log(Response);
     });
+    this.route.navigate(['/dulceria']);
   }
 }
